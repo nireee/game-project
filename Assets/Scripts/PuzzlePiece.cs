@@ -16,10 +16,21 @@ public class PuzzlePiece : DragableObject
 
     public static float SnapThreshold = 0.1f;
 
+    public static int OrderInLayer = 0;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        if (transform.parent && transform.parent.GetComponent<PuzzlePiece>())
+        {
+            Neighbor neighbor = new Neighbor();
+            neighbor.Piece = transform.parent.GetComponent<PuzzlePiece>();
+            neighbor.Offset = neighbor.Piece.transform.position - transform.position;
+            Neighbors = new Neighbor[1];
+            Neighbors[0] = neighbor;
+            transform.parent = transform.parent.parent;
+        }
     }
 
     private void OnMouseDown()
@@ -34,6 +45,9 @@ public class PuzzlePiece : DragableObject
                 ParentChildSwapping(transform.GetComponent<PuzzlePiece>(), transform.parent.GetComponent<PuzzlePiece>());
             }
         }
+
+        OrderInLayer += 1;
+        GetComponent<SpriteRenderer>().sortingOrder = OrderInLayer;
     }
 
     public static void ParentChildSwapping(PuzzlePiece parent, PuzzlePiece child) 
@@ -77,6 +91,8 @@ public class PuzzlePiece : DragableObject
                 
             }
         }
+
+        
     }
 
     private bool checkPiecePossition(Neighbor piece)

@@ -1,0 +1,371 @@
+fileFormatVersion: 2
+guid: c0098ebf7508b3943951346f65bb7cb3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1234860899822369933
+    second: TestSheet 2_2
+  - first:
+      213: -1745556003198090485
+    second: TestSheet 4_2
+  - first:
+      213: -5059770244662113673
+    second: TestSheet 6_2
+  - first:
+      213: -5980707146912280544
+    second: TestSheet 8_2
+  - first:
+      213: 3579689220207820204
+    second: TestSheet 2_4
+  - first:
+      213: -4423572521324213854
+    second: TestSheet 4_4
+  - first:
+      213: -6784743794830329542
+    second: TestSheet 6_4
+  - first:
+      213: -2969539998011774025
+    second: TestSheet 8_4
+  - first:
+      213: -2973194788835482407
+    second: TestSheet1_8
+  - first:
+      213: 650523966854051466
+    second: TestSheet1_9
+  - first:
+      213: -4093472838803623894
+    second: TestSheet1_10
+  - first:
+      213: -8989666700270539777
+    second: TestSheet1_11
+  - first:
+      213: 5678037621045080698
+    second: TestSheet1_12
+  - first:
+      213: -1149518712429813081
+    second: TestSheet1_13
+  - first:
+      213: 4115528215761234201
+    second: TestSheet1_14
+  - first:
+      213: -4529833122384751862
+    second: TestSheet1_15
+  - first:
+      213: 2480147942029487304
+    second: TestSheet1_16
+  - first:
+      213: 1843522348341873467
+    second: TestSheet1_17
+  - first:
+      213: 6461837289603038847
+    second: TestSheet1_18
+  - first:
+      213: -3647450407857805513
+    second: TestSheet1_19
+  - first:
+      213: -2524330998230058604
+    second: TestSheet1_20
+  - first:
+      213: -7490317681284744460
+    second: TestSheet1_21
+  - first:
+      213: 135924832556201744
+    second: TestSheet1_22
+  - first:
+      213: 48846650706519778
+    second: TestSheet1_23
+  - first:
+      213: -6646542218302382647
+    second: TestSheet1_24
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TestSheet 2_2
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 404
+        width: 203
+        height: 322
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8c7ee0227b132110800000000000000
+      internalID: 1234860899822369933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestSheet 4_2
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 409
+        width: 239
+        height: 318
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b03c3dd301a86c7e0800000000000000
+      internalID: -1745556003198090485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestSheet 6_2
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 405
+        width: 239
+        height: 316
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77ac2d135c518c9b0800000000000000
+      internalID: -5059770244662113673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestSheet 8_2
+      rect:
+        serializedVersion: 2
+        x: 1411
+        y: 399
+        width: 202
+        height: 328
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02057aa7982400da0800000000000000
+      internalID: -5980707146912280544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestSheet 2_4
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 0
+        width: 203
+        height: 287
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cad38c8316c9da130800000000000000
+      internalID: 3579689220207820204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestSheet 4_4
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 0
+        width: 241
+        height: 285
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a98a4c9a305c92c0800000000000000
+      internalID: -4423572521324213854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestSheet 6_4
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 0
+        width: 202
+        height: 283
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a393a19377fb7d1a0800000000000000
+      internalID: -6784743794830329542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestSheet 8_4
+      rect:
+        serializedVersion: 2
+        x: 1411
+        y: 0
+        width: 202
+        height: 263
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bba138ea131ac6d0800000000000000
+      internalID: -2969539998011774025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
