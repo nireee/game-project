@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class Puzzle : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public PuzzlePiece[] Pieces;
+    public bool Finished;
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(!Finished) Finished = CheckFinished();
+    }
+
+    public bool CheckFinished()
+    {
+        bool finished = true;
+        foreach(PuzzlePiece piece in Pieces)
+        {
+            if (piece.Dragable) finished = false;
+        }
+
+        return finished;
     }
 }

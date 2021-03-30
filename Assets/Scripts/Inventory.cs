@@ -5,23 +5,53 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public List<Item> InventoryItems;
+    public Item[] ItemPrefabs;
+    private List<int> InventoryItemIDs = new List<int>();
 
+    public static Inventory StaticInventory;
+    public InventoryDock Dock;
+
+    private void Start()
+    {
+        //Singlton
+        if(StaticInventory == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            StaticInventory = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        
+    }
     public void AddItem(Item newItem)
     {
-        if (!isInInventory(newItem)) InventoryItems.Add(newItem);
+        if (!isInInventory(newItem))
+        {
+            InventoryItems.Add(newItem);
+            InventoryItemIDs.Add(newItem.ItemID);
+            Dock.AddItems(InventoryItems);
+        }
+        
     }
 
-    public void RemoveItem(GameObject itemPrefab)
+    public void RemoveItem(int itemID)
     {
-        Item removeItem = FindItem(itemPrefab);
-        if (removeItem != null) InventoryItems.Remove(removeItem);
+        Item removeItem = FindItem(itemID);
+        if (removeItem != null)
+        {
+            InventoryItems.Remove(removeItem);
+            InventoryItemIDs.Remove(itemID);
+        }
+            
     }
 
-    public Item FindItem(GameObject itemPrefab)
+    public Item FindItem(int itemID)
     {
         foreach(Item item in InventoryItems)
         {
-            if (item.ItemPrefab == itemPrefab) return item;
+            if (item.ItemID == itemID) return item;
         }
 
         return null;
@@ -32,7 +62,7 @@ public class Inventory : MonoBehaviour
         bool contained = false;
         foreach(Item item in InventoryItems)
         {
-            if (item.ItemPrefab == newItem.ItemPrefab) return true;
+            if (item.ItemID == newItem.ItemID) return true;
         }
         return contained;
     }

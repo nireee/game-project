@@ -5,6 +5,7 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     public GameObject ItemPrefab;
+    public int ItemID = -1;
 
     public enum ItemStates
     {
@@ -26,7 +27,7 @@ public class Item : MonoBehaviour
     private void itemFound()
     {
         FindObjectOfType<Inventory>().AddItem(this);
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 
 }
