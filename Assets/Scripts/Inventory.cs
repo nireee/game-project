@@ -29,7 +29,7 @@ public class Inventory : MonoBehaviour
         print("check");
         InventoryItems.Add(newItem);
         InventoryItemIDs.Add(newItem.ItemID);
-        Dock.AddItem(InventoryItems);
+        Dock.AddItem(newItem);
         }
 
 

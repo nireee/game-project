@@ -8,7 +8,8 @@ public class DragableObject : MonoBehaviour
     public bool Dragable = true;
 
     private void OnMouseDown(){
-        if(Dragable){
+        print("OnMouseDown");
+        if (Dragable){
             displacement = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
     }

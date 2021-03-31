@@ -13,20 +13,38 @@ public class Item : MonoBehaviour
        placing,
        placed
    }
-   public ItemStates ItemState = ItemStates.hidden;
+   [SerializeField] private ItemStates ItemState = ItemStates.hidden;
 
 
    private void OnMouseDown(){
        
-       if(ItemState == ItemStates.hidden){
-           itemFound();
-       }
+        if(ItemState == ItemStates.hidden){
+            itemFound();
+            
+        }
    }
 
-   private void itemFound(){
+    private void OnMouseUp()
+    {
+        if (ItemState == ItemStates.hidden)
+        {
+            SetItemState(ItemStates.found);
+        }
+    }
+
+    private void itemFound(){
        // animation that make the item rise up and surrounding by lights and play sounds
        FindObjectOfType<Inventory>().AddItem(this);
        
     //    gameObject.SetActive(false);
    }
+
+    public void SetItemState(ItemStates state)
+    {
+        ItemState = state;
+    }
+    public ItemStates GetItemState()
+    {
+        return ItemState;
+    }
 }
