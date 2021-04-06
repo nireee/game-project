@@ -14,6 +14,9 @@ public class InventoryDock : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (isOpen) OpenInventoryDock();
+        else CloseInventoryDock();
+
         if(Inventory.StaticInventory != null) inventory = Inventory.StaticInventory;
     }
 
@@ -24,7 +27,8 @@ public class InventoryDock : MonoBehaviour
     }
 
     private void OnMouseDown(){
-        if(isOpen){
+        if (!FindObjectOfType<TouchHandler>().CanTouch(gameObject)) return;
+        if (isOpen){
             CloseInventoryDock();
         }
         else{
@@ -39,10 +43,10 @@ public class InventoryDock : MonoBehaviour
     {
         if (!isOpen)
         {
-            InventoryItem.SetItemState( Item.ItemStates.found);
             InventoryItem.gameObject.SetActive(false);
         }
         else placeItemInDock(InventoryItem);
+        InventoryItem.SetItemState(Item.ItemStates.found);
     }
 
     public void CloseInventoryDock()

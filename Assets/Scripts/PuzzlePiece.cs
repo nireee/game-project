@@ -34,7 +34,7 @@ public class PuzzlePiece : DragableObject
         }
     }
     public void OnMouseDown(){
-        
+        if (!FindObjectOfType<TouchHandler>().CanTouch(gameObject)) return;
         if (itemScript.GetItemState() != Item.ItemStates.hidden && itemScript.GetItemState() != Item.ItemStates.placed)
         {
             Dragable = true;
@@ -77,7 +77,7 @@ public class PuzzlePiece : DragableObject
     }
 
     private void OnMouseUp(){
-        
+        if (!FindObjectOfType<TouchHandler>().CanTouch(gameObject)) return;
         if (!Dragable) return;
         if (itemScript.GetItemState() != Item.ItemStates.hidden && itemScript.GetItemState() != Item.ItemStates.placed)
         {
@@ -94,6 +94,7 @@ public class PuzzlePiece : DragableObject
                     else
                     {
                         itemScript.SetItemState(Item.ItemStates.placed);
+                        FindObjectOfType<Inventory>().PlaceItem(itemScript);
                         Dragable = false;
                         transform.position = (Vector2)neighbor.Piece.transform.position - neighbor.Offset;
                         ParentChildSwapping(neighbor.Piece, transform.GetComponent<PuzzlePiece>());
