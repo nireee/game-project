@@ -14,6 +14,8 @@ public class InventoryDock : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (isOpen) OpenInventroyDock();
+        else CloseInventoryDock();
         if(Inventory.StaticInventory != null) inventory = Inventory.StaticInventory;
     }
 
@@ -24,19 +26,73 @@ public class InventoryDock : MonoBehaviour
     }
 
     private void OnMouseDown(){
-        if(isOpen){
-            Dock.SetActive(false);
+        if (!FindObjectOfType<TouchHandler>().CanTouch(gameObject)) return;
+        if (isOpen){
+            CloseInventoryDock();
         }
         else{
-            Dock.SetActive(true);
+            OpenInventroyDock();
         }
         isOpen = !isOpen;
     }
 
-    public void AddItem(List<Item> InventoryItems){
-        for(int i = 0; i < InventoryItems.Count; i += 1){
-            Vector2 itemLoc = new Vector2(Dock.transform.position.x, Dock.transform.position.y + ItemStart + ItemSpacing * i);
-            InventoryItems[i].transform.position = itemLoc;
+    int currentDockIndex = 0;
+
+    public void AddItem(Item InventoryItem){
+
+        if (!isOpen)
+        {
+            InventoryItem.gameObject.SetActive(false);
         }
+        else placeItemInDock(InventoryItem);
+        InventoryItem.SetItemState(Item.ItemStates.found);
+
     }
+
+    public void CloseInventoryDock()
+    {
+        //hide items
+        Dock.SetActive(false);
+        for (int i = 0; i < inventory.InventoryItems.Count; i += 1)
+        {
+            if(inventory.InventoryItems[i].GetComponent<Item>().GetItemStates() != Item.ItemStates.placed)
+            {
+                inventory.InventoryItems[i].gameObject.SetActive(false);
+            }
+        }
+
+    }
+
+    public void OpenInventroyDock()
+    {
+        //display items
+        Dock.SetActive(true);
+        for (int i = 0; i < inventory.InventoryItems.Count; i += 1)
+        {
+            if (inventory.InventoryItems[i].GetComponent<Item>().GetItemStates() != Item.ItemStates.hidden)
+            {
+                inventory.InventoryItems[i].gameObject.SetActive(true);
+            }
+        }
+
+        currentDockIndex = 0;
+        for (int i = 0; i < inventory.InventoryItems.Count; i += 1)
+        {
+            if (inventory.InventoryItems[i].GetComponent<Item>().GetItemStates() != Item.ItemStates.placed /*&& InventoryItems[i].GetComponent<Item>().ItemState != Item.ItemStates.hidden*/)
+            {
+                placeItemInDock(inventory.InventoryItems[i]);
+            }
+
+        }
+
+    }
+
+    private void placeItemInDock(Item item)
+    {
+        Vector2 itemLoc = new Vector2(Dock.transform.position.x, Dock.transform.position.y + ItemStart + ItemSpacing * currentDockIndex);
+        item.transform.position = itemLoc;
+        currentDockIndex += 1;
+    }
+
+
 }

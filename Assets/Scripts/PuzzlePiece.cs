@@ -6,18 +6,6 @@ public class PuzzlePiece : DragableObject
 {
     [SerializeField]private int PieceId = 0;
     public Neighbor[] Neighbors;
-    // Vector2 displacement;
-
-    // public GameObject piece1;
-    // public GameObject piece2;
-    // public GameObject piece3;
-    // public GameObject piece4;
-    // public GameObject piece5;
-    // public GameObject piece6;
-    // public GameObject piece7;
-    // public GameObject piece8;
-    // public GameObject piece9;
-
     
     
     [System.Serializable]public struct Neighbor{
@@ -27,10 +15,17 @@ public class PuzzlePiece : DragableObject
 
     public float SnapThreshold = 0.1f;
     public static int OrderInLayer = 1;
+
+
+    private Item itemScript;
+
+
     // Start is called before the first frame update
     void Start()
     {
-       if(transform.parent && transform.parent.GetComponent<PuzzlePiece>()){
+        itemScript = GetComponent<Item>();
+        Dragable = false;
+        if(transform.parent && transform.parent.GetComponent<PuzzlePiece>()){
            Neighbor neighbor = new Neighbor();
            neighbor.Piece = transform.parent.GetComponent<PuzzlePiece>();
            neighbor.Offset = neighbor.Piece.transform.position - transform.position;
@@ -38,10 +33,14 @@ public class PuzzlePiece : DragableObject
         //    Neighbors = new Neighbor[1];
         //    Neighbors[0] = neighbor;
             transform.parent = transform.parent.parent;
-       }
+        }
     }
     public void OnMouseDown(){
-        displacement = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (!FindObjectOfType<TouchHandler>().CanTouch(gameObject)) return;
+        if (itemScript.GetItemStates() != Item.ItemStates.hidden && itemScript.GetItemStates() != Item.ItemStates.placed)
+       { 
+           Dragable = true;
+           displacement = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if(transform.parent){
             if(transform.parent.GetComponent<PuzzlePiece>()){
                 ParentChildSwapping(transform.GetComponent<PuzzlePiece>(), transform.parent.GetComponent<PuzzlePiece>());
@@ -50,7 +49,11 @@ public class PuzzlePiece : DragableObject
         }
         OrderInLayer += 1;
         GetComponent<SpriteRenderer>().sortingOrder = OrderInLayer;
-
+        }
+        else
+        {
+        Dragable = false;
+        }
     }
     private static void ParentChildSwapping(PuzzlePiece parent, PuzzlePiece child){
         PuzzlePiece[] pieces = child.GetComponentsInChildren<PuzzlePiece>();
@@ -71,19 +74,26 @@ public class PuzzlePiece : DragableObject
     }
 
     private void OnMouseUp(){
-        if(!Dragable) return;
-        foreach (Neighbor neighbor in Neighbors)
+        if (!FindObjectOfType<TouchHandler>().CanTouch(gameObject)) return;
+        if (!Dragable) return;
+        if(itemScript.GetItemStates() != Item.ItemStates.hidden && itemScript.GetItemStates() != Item.ItemStates.placed)
         {
-        if (checkPiecePossition(neighbor)){
-            if(neighbor.Piece.Dragable){
-                neighbor.Piece.transform.position = (Vector2)transform.position + neighbor.Offset;
-                ParentChildSwapping(transform.GetComponent<PuzzlePiece>(), neighbor.Piece);
-            }else{
-                Dragable = false;
-                transform.position = (Vector2)neighbor.Piece.transform.position - neighbor.Offset;
-                ParentChildSwapping(neighbor.Piece, transform.GetComponent<PuzzlePiece>());
+            if(!Dragable) return;
+            foreach (Neighbor neighbor in Neighbors)
+            {
+            if (checkPiecePossition(neighbor)){
+                if(neighbor.Piece.Dragable){
+                    neighbor.Piece.transform.position = (Vector2)transform.position + neighbor.Offset;
+                    ParentChildSwapping(transform.GetComponent<PuzzlePiece>(), neighbor.Piece);
+                }else{
+                    itemScript.SetItemState(Item.ItemStates.placed);
+                        FindObjectOfType<Inventory>().PlaceItem(itemScript);
+                    Dragable = false;
+                    transform.position = (Vector2)neighbor.Piece.transform.position - neighbor.Offset;
+                    ParentChildSwapping(neighbor.Piece, transform.GetComponent<PuzzlePiece>());
+                }
             }
-        }
+            }
         }
         
     }

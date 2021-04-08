@@ -8,6 +8,7 @@ public class Inventory : MonoBehaviour
     public List<Item> InventoryItems;
     public Item[] ItemPrefabs;
     public List<int> InventoryItemIDs;
+    public List<Item.ItemStates> ItemStates;
     public InventoryDock Dock;
 
     public static Inventory StaticInventory;
@@ -26,14 +27,22 @@ public class Inventory : MonoBehaviour
     }
     public void AddItem(Item newItem){
        if(!isInInventory(newItem)){
-        print("check");
-        InventoryItems.Add(newItem);
-        InventoryItemIDs.Add(newItem.ItemID);
-        Dock.AddItem(InventoryItems);
+            print("check");
+            InventoryItems.Add(newItem);
+            InventoryItemIDs.Add(newItem.ItemID);
+            ItemStates.Add(Item.ItemStates.found);
+            Dock.AddItem(newItem);
         }
 
 
    }
+    public void PlaceItem(Item placedItem)
+    {
+        for(int i = 0; i < InventoryItemIDs.Count; i += 1)
+        {
+            if (InventoryItemIDs[i] == placedItem.ItemID) ItemStates[i] = Item.ItemStates.placed;
+        }
+    }
 
    public void RemoveItem(int itemID){
        Item removeItem = FindItem(itemID);
@@ -61,4 +70,21 @@ public class Inventory : MonoBehaviour
        }
        return contained;
    }
+
+    public void LoadInventory()
+    {
+        Dock = FindObjectOfType<InventoryDock>();
+        Item[] sceneItems = FindObjectsOfType<Item>();
+        for(int i = 0; i < InventoryItemIDs.Count; i += 1)
+        {
+            int itemID = InventoryItemIDs[i];
+            foreach(Item item in sceneItems)
+            {
+                if(itemID == item.ItemID)
+                {
+                    Dock.AddItem(item);
+                }
+            }
+        }
+    }
 }
