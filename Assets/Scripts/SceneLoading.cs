@@ -25,8 +25,9 @@ public class SceneLoading : MonoBehaviour
             Screen.gameObject.SetActive(false);
             FindObjectOfType<TouchHandler>().ClearCanTouchObjects();
         }
-        else if (!InventoryLoaded)
+        else if (!InventoryLoaded && FindObjectOfType<Inventory>())
         {
+            FindObjectOfType<Inventory>().LoadInventory();
             InventoryLoaded = true;
         }
     }

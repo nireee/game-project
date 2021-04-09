@@ -354,7 +354,7 @@ Transform:
   m_GameObject: {fileID: 237281812}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.02, y: -1.22, z: 2.6021292}
-  m_LocalScale: {x: 0.20000002, y: 0.20000002, z: 1}
+  m_LocalScale: {x: 0.20000002, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 409642627}
   m_RootOrder: 5
@@ -532,6 +532,8 @@ MonoBehaviour:
   MaximizingRate: 1
   DockScale: 0.5
   DockingRate: 1
+  UndockingRate: 1
+  MaximizedPause: 1
 --- !u!1 &276350013
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,6 +776,8 @@ MonoBehaviour:
   MaximizingRate: 1
   DockScale: 0.5
   DockingRate: 1
+  UndockingRate: 1
+  MaximizedPause: 1
 --- !u!1 &285766480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,6 +1133,7 @@ MonoBehaviour:
   InventoryItems: []
   ItemPrefabs: []
   InventoryItemIDs: 
+  ItemStates: 
   Dock: {fileID: 1317464278}
 --- !u!4 &439240044
 Transform:
@@ -1343,6 +1348,8 @@ MonoBehaviour:
   MaximizingRate: 1
   DockScale: 0.5
   DockingRate: 1
+  UndockingRate: 1
+  MaximizedPause: 1
 --- !u!1 &635288445
 GameObject:
   m_ObjectHideFlags: 0
@@ -1372,7 +1379,7 @@ Transform:
   m_GameObject: {fileID: 635288445}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.61, y: 0.13, z: 2.6021292}
-  m_LocalScale: {x: 0.20000002, y: 0.20000002, z: 1}
+  m_LocalScale: {x: 0.20000002, y: 0, z: 1}
   m_Children: []
   m_Father: {fileID: 409642627}
   m_RootOrder: 1
@@ -1571,6 +1578,8 @@ MonoBehaviour:
   MaximizingRate: 1
   DockScale: 0.5
   DockingRate: 1
+  UndockingRate: 1
+  MaximizedPause: 1
 --- !u!1 &994816925
 GameObject:
   m_ObjectHideFlags: 0
@@ -1780,6 +1789,8 @@ MonoBehaviour:
   MaximizingRate: 1
   DockScale: 0.5
   DockingRate: 1
+  UndockingRate: 1
+  MaximizedPause: 1
 --- !u!1 &1317464277
 GameObject:
   m_ObjectHideFlags: 0
@@ -2136,6 +2147,8 @@ MonoBehaviour:
   MaximizingRate: 1
   DockScale: 0.5
   DockingRate: 1
+  UndockingRate: 1
+  MaximizedPause: 1
 --- !u!1 &1604935729
 GameObject:
   m_ObjectHideFlags: 0
@@ -2437,6 +2450,8 @@ MonoBehaviour:
   MaximizingRate: 1
   DockScale: 0.5
   DockingRate: 1
+  UndockingRate: 1
+  MaximizedPause: 1
 --- !u!1 &1802427001
 GameObject:
   m_ObjectHideFlags: 0
@@ -2667,6 +2682,8 @@ MonoBehaviour:
   MaximizingRate: 1
   DockScale: 0.5
   DockingRate: 1
+  UndockingRate: 1
+  MaximizedPause: 1
 --- !u!1 &2008073902
 GameObject:
   m_ObjectHideFlags: 0
@@ -2870,3 +2887,5 @@ MonoBehaviour:
   MaximizingRate: 1
   DockScale: 0.5
   DockingRate: 1
+  UndockingRate: 1
+  MaximizedPause: 1
