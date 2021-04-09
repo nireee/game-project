@@ -35,15 +35,21 @@ public class Item : MonoBehaviour
     public float MaximizedScale = 2;
     public float DockedScale = 0.5f;
     public float DockingRate = 1;
-    //public float UndockingSpeed = 1;
+    public float UndockingRate = 1;
 
     private Vector2 DefaultScale;
     private float TargetScale;
     private Vector2 TargetLoc;
 
+    public float MaximizedPause = 1;
+    private float maximizedPauseStart;
+    private bool maximizedCancel = false;
+
+    public static int OrderInLayer = 1;
+
     private void Start()
     {
-        DefaultScale = transform.localScale;
+        DefaultScale = transform.lossyScale;
     }
     private void Update()
     {
@@ -58,12 +64,32 @@ public class Item : MonoBehaviour
                 }
                 break;
             case AnimationStates.maximizing:
-                //if(scaleItem(MazimizingRate))
+                TargetScale = MaximizedScale;
+                TargetLoc = MaximizedLoc;
+
+                float dScale = MaximizedScale - transform.lossyScale.x / DefaultScale.x;
+                float time = dScale / MazimizingRate;
+                float speed = Vector2.Distance(TargetLoc, transform.position) / time;
+                translateItem(speed);
+                print(transform.position);
+                 print(speed + " " + dScale + " " + time);
+
+                if (scaleItem(MazimizingRate))
+                {
                     AnimationState += 1;
+                    maximizedCancel = false;
+                    maximizedPauseStart = Time.fixedTime;
+                    FindObjectOfType<TouchHandler>().ClearCanTouchObjects(gameObject);
+                }
+                    
                 
                 break;
             case AnimationStates.maximized:
-                AnimationState += 1;
+                if(maximizedCancel || maximizedPauseStart + MaximizedPause < Time.fixedTime) {
+                    AnimationState += 1;
+                    //FindObjectOfType<TouchHandler>().ClearCanTouchObjects(null);
+                }
+                
                 break;
             case AnimationStates.docking:
                 addItemToDock();
@@ -73,7 +99,11 @@ public class Item : MonoBehaviour
 
                 break;
             case AnimationStates.undocking:
-
+                TargetScale = 1;
+                if (scaleItem(UndockingRate))
+                {
+                    AnimationState += 1;
+                }
                 break;
             case AnimationStates.undocked:
 
@@ -89,6 +119,7 @@ public class Item : MonoBehaviour
         if (Vector2.Distance(TargetLoc, transform.position) < speed * Time.deltaTime)
         {
             transform.position = TargetLoc;
+            print("set position");
             return true;
         }
         else
@@ -100,28 +131,49 @@ public class Item : MonoBehaviour
 
     private bool scaleItem(float rate)
     {
-        float currentScale = transform.localScale.x / DefaultScale.x;
-        
+        float currentScale = transform.lossyScale.x / DefaultScale.x;
+        float deltaScale = TargetScale - currentScale;
 
-        if (rate < 0 && TargetScale + currentScale > rate * Time.deltaTime || rate > 0 && TargetScale - currentScale < rate * Time.deltaTime)
+        if (rate < 0 && deltaScale > rate * Time.deltaTime || rate > 0 && deltaScale < rate * Time.deltaTime)
         {
             transform.localScale = TargetScale * DefaultScale;
             return true;
         }
         else
         {
-            transform.localScale += rate * Time.deltaTime * new Vector3(1, 1, 1); 
+            float yScale = DefaultScale.y / DefaultScale.x;
+            transform.localScale += rate * Time.deltaTime * new Vector3(1, yScale, 1); 
             return false;
         }
     }
 
     private void OnMouseDown(){
         if (!FindObjectOfType<TouchHandler>().CanTouch(gameObject)) return;
-        if (ItemState == ItemStates.hidden){
-            itemFound();
-            
+
+        if (AnimationState == AnimationStates.maximizing ||  AnimationState == AnimationStates.maximized || AnimationState == AnimationStates.docking)
+        {
+            DockItem();
         }
+        else if (ItemState == ItemStates.hidden && AnimationState == AnimationStates.hidden)
+        {
+            itemFound();
+
+        }
+
+        if(ItemState != ItemStates.placed)
+        {
+            OrderInLayer += 1;
+            GetComponent<SpriteRenderer>().sortingOrder = OrderInLayer;
+        }
+         
    }
+
+    public void DockItem()
+    {
+        AnimationState = AnimationStates.docked;
+        transform.localScale = DockedScale * DefaultScale;
+        if(!FindObjectOfType<Inventory>().isInInventory(this)) addItemToDock();
+    }
 
     //private void OnMouseUp()
     //{

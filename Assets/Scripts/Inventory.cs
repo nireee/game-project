@@ -65,7 +65,7 @@ public class Inventory : MonoBehaviour
 
 
 
-   private bool isInInventory(Item item){
+   public bool isInInventory(Item item){
        bool contained = false;
        foreach(Item item1 in InventoryItems){
            if(item1.ItemID == item.ItemID) return true;

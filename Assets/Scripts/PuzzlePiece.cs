@@ -13,7 +13,7 @@ public class PuzzlePiece : DragableObject
     }
 
     public float SnapThreshold = 0.1f;
-    public static int OrderInLayer = 1;
+    //public static int OrderInLayer = 1;
 
     private Item itemScript;
 
@@ -37,6 +37,13 @@ public class PuzzlePiece : DragableObject
         if (!FindObjectOfType<TouchHandler>().CanTouch(gameObject)) return;
         if (itemScript.GetItemState() != Item.ItemStates.hidden && itemScript.GetItemState() != Item.ItemStates.placed)
         {
+            
+            if (itemScript.AnimationState == Item.AnimationStates.docked)
+            {
+                print("Undocking");
+                itemScript.AnimationState = Item.AnimationStates.undocking;
+            }
+
             Dragable = true;
 
             displacement = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -48,8 +55,8 @@ public class PuzzlePiece : DragableObject
                 }
 
             }
-            OrderInLayer += 1;
-            GetComponent<SpriteRenderer>().sortingOrder = OrderInLayer;
+            //OrderInLayer += 1;
+            //GetComponent<SpriteRenderer>().sortingOrder = OrderInLayer;
         }
         else
         {

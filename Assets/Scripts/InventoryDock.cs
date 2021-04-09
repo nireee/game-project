@@ -88,6 +88,7 @@ public class InventoryDock : MonoBehaviour
 
     private void placeItemInDock(Item item)
     {
+        item.DockItem();
         Vector2 itemLoc = new Vector2(Dock.transform.position.x, Dock.transform.position.y + ItemStart + ItemSpacing * currentDockIndex);
         item.transform.position = itemLoc;
         currentDockIndex += 1;
