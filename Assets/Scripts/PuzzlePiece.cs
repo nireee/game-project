@@ -111,7 +111,12 @@ public class PuzzlePiece : DragableObject
     //     if(piece2.transform.position == new Vector3(1.653383f, 3.182652f, 2.602129f)) Dragable = false;
     // }
 
-
+    public void PlaceItem()
+    {
+        print("PlaceItem");
+        Dragable = false;
+        transform.position = (Vector2)Neighbors[0].Piece.transform.position - Neighbors[0].Offset;
+    }
     
     
-};
+}

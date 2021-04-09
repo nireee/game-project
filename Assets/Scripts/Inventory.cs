@@ -78,12 +78,38 @@ public class Inventory : MonoBehaviour
         for(int i = 0; i < InventoryItemIDs.Count; i += 1)
         {
             int itemID = InventoryItemIDs[i];
+            //checking if inventory item is in the scene
             foreach(Item item in sceneItems)
             {
                 if(itemID == item.ItemID)
                 {
-                    Dock.AddItem(item);
+                    print(itemID);
+                    InventoryItems[i] = item;
+                    item.SetItemState(ItemStates[i]);
+                    if(ItemStates[i] == Item.ItemStates.placed)
+                    {
+                        item.gameObject.SendMessage("PlaceItem");
+                    }
+                    else
+                    {
+                        Dock.AddItem(item);
+                    }
+                    
                 }
+            }
+
+            //print(InventoryItems[i]);
+            //if inventory item is not in the scene
+            if (!InventoryItems[i]) print(ItemStates[i]);
+
+            if (!InventoryItems[i] && ItemStates[i] != Item.ItemStates.placed)
+            {
+                Item newItem = Instantiate(ItemPrefabs[InventoryItemIDs[i]-1], Vector3.zero, Quaternion.identity);
+                InventoryItems[i] = newItem;
+                newItem.SetItemState(ItemStates[i]);
+                newItem.AnimationState = Item.AnimationStates.docked;
+                Dock.AddItem(newItem);
+                newItem.DockItem();
             }
         }
     }

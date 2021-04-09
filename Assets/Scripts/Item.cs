@@ -60,16 +60,19 @@ public class Item : MonoBehaviour
             case AnimationStates.poppingOut:
                 if (translateItem(PopOutTranslationSpeed))
                 {
+                    IncrementSortingOrder();
                    AnimationState += 1;
                 }
                 
                 break;
             case AnimationStates.maximizing:
                 TargetScale = MaximiziedScale;
+                TargetLoc = MaximizeLoc;
                 float dScale = MaximiziedScale - transform.lossyScale.x / DefaultScale.x;
                 float time = dScale / MaximizingRate;
                 float speed = Vector2.Distance(TargetLoc, transform.position) / time;
                 translateItem(speed);
+
                 if (scaleItem(MaximizingRate))
                 {
                     AnimationState += 1;
@@ -151,12 +154,18 @@ public class Item : MonoBehaviour
         {
             itemFound();
         }
-        if(ItemState != ItemStates.placed)
+
+        if(ItemState != ItemStates.placed && AnimationState > AnimationStates.poppingOut)
         {
-            OrderInLayer += 1;
-            GetComponent<SpriteRenderer>().sortingOrder = OrderInLayer;
+            IncrementSortingOrder();
         }
         
+    }
+
+    private void IncrementSortingOrder()
+    {
+        OrderInLayer += 2;
+        GetComponent<SpriteRenderer>().sortingOrder = OrderInLayer;
     }
 
     //private void OnMouseUp(){
