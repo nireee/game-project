@@ -93,21 +93,18 @@ public class Inventory : MonoBehaviour
                     else
                     {
                         Dock.AddItem(item);
-                    }
-                    
+                    }                   
                 }
             }
-
-            //print(InventoryItems[i]);
             //if inventory item is not in the scene
-            if (!InventoryItems[i]) print(ItemStates[i]);
-
             if (!InventoryItems[i] && ItemStates[i] != Item.ItemStates.placed)
             {
                 Item newItem = Instantiate(ItemPrefabs[InventoryItemIDs[i]-1], Vector3.zero, Quaternion.identity);
                 InventoryItems[i] = newItem;
                 newItem.SetItemState(ItemStates[i]);
                 newItem.AnimationState = Item.AnimationStates.docked;
+
+                newItem.DefaultScale = newItem.transform.lossyScale;
                 Dock.AddItem(newItem);
                 newItem.DockItem();
             }

@@ -55,7 +55,7 @@ public class InventoryDock : MonoBehaviour
         Dock.SetActive(false);
         for (int i = 0; i < inventory.InventoryItems.Count; i += 1)
         {
-            if(inventory.InventoryItems[i].GetComponent<Item>().GetItemStates() != Item.ItemStates.placed)
+            if(inventory.InventoryItems[i] && inventory.InventoryItems[i].GetComponent<Item>().GetItemStates() != Item.ItemStates.placed)
             {
                 inventory.InventoryItems[i].gameObject.SetActive(false);
             }
@@ -69,7 +69,7 @@ public class InventoryDock : MonoBehaviour
         Dock.SetActive(true);
         for (int i = 0; i < inventory.InventoryItems.Count; i += 1)
         {
-            if (inventory.InventoryItems[i].GetComponent<Item>().GetItemStates() != Item.ItemStates.hidden)
+            if (inventory.InventoryItems[i] && inventory.InventoryItems[i].GetComponent<Item>().GetItemStates() != Item.ItemStates.hidden)
             {
                 inventory.InventoryItems[i].gameObject.SetActive(true);
             }
@@ -78,7 +78,7 @@ public class InventoryDock : MonoBehaviour
         currentDockIndex = 0;
         for (int i = 0; i < inventory.InventoryItems.Count; i += 1)
         {
-            if (inventory.InventoryItems[i].GetComponent<Item>().GetItemStates() != Item.ItemStates.placed /*&& InventoryItems[i].GetComponent<Item>().ItemState != Item.ItemStates.hidden*/)
+            if (inventory.InventoryItems[i] && inventory.InventoryItems[i].GetComponent<Item>().GetItemStates() != Item.ItemStates.placed /*&& InventoryItems[i].GetComponent<Item>().ItemState != Item.ItemStates.hidden*/)
             {
                 
                 placeItemInDock(inventory.InventoryItems[i]);
