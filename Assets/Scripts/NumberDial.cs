@@ -13,6 +13,10 @@ public class NumberDial : MonoBehaviour
     public float DialSpeed = 1;
     private bool movingDial = false;
     public int DisplayedNum;
+    public int CurrentNum;
+
+    public NumberLock NumberLock;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +25,8 @@ public class NumberDial : MonoBehaviour
             NumbersDelta[i] = Numbers[i].localPosition.y;
         }
         totalDelta = NumbersDelta[8];
+        if (NumberLock.Completed) SetDial(DisplayedNum);
+        else SetDial(TargetNumber);
     }
 
     // Update is called once per frame
@@ -43,6 +49,7 @@ public class NumberDial : MonoBehaviour
             {
                 currentIndex = i;
                 numlist[4] = i + 1;
+                CurrentNum = numlist[4];
                 //top of dial
                 for (int j = 0; j < 4; j += 1)
                 {
@@ -73,6 +80,8 @@ public class NumberDial : MonoBehaviour
                         Numbers[dialVal - 1].localPosition = new Vector2(Numbers[dialVal - 1].localPosition.x, NumbersDelta[dialVal - 1]);
                     }
                 }
+                if (currentIndex == 8) Numbers[8].localPosition = new Vector2(Numbers[8].localPosition.x, NumbersDelta[8]);
+                else if (currentIndex == 0) Numbers[0].localPosition = new Vector2(Numbers[0].localPosition.x, NumbersDelta[0]);
                 Numbers[numlist[0] - 1].gameObject.SetActive(false);
                 Numbers[numlist[1] - 1].gameObject.SetActive(false);
                 Numbers[numlist[2] - 1].gameObject.SetActive(false);
@@ -92,17 +101,31 @@ public class NumberDial : MonoBehaviour
 
     }
 
+    private void SetDial(int num) {
+        NumbersContainer.localPosition = new Vector2(NumbersContainer.localPosition.x, -NumbersDelta[num - 1]);
+        TargetNumber = num;
+    }
+
+
     public void MoveDialUp()
     {
-        if (TargetNumber == 1) TargetNumber = 9;
-        else TargetNumber -= 1;
+        if (NumberLock.CanTouch())
+        {
+            if (TargetNumber == 1 && CurrentNum == 1) TargetNumber = 9;
+            else if (TargetNumber == CurrentNum) TargetNumber -= 1;
+        }
+        
 
     }
 
     public void MoveDialDown()
     {
-        if (TargetNumber == 9) TargetNumber = 1;
-        else TargetNumber += 1;
+        if (NumberLock.CanTouch())
+        {
+            if (TargetNumber == 9 && CurrentNum == 9) TargetNumber = 1;
+            else if (TargetNumber == CurrentNum) TargetNumber += 1;
+        }
+        
 
     }
 

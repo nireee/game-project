@@ -11,20 +11,16 @@ public class NumberDialButton : MonoBehaviour
 
     private void OnMouseDown()
     {
-        CheckCombo();
-        if(ComboCompleted != true)
-        {
-            if (DialUp) NumberDial.MoveDialUp();
-            else NumberDial.MoveDialDown();
-        }
+        if (DialUp) NumberDial.MoveDialUp();
+        else NumberDial.MoveDialDown();
 
     }
-    private void CheckCombo() {
-        //    if (NumberDial.TargetNumber == NumberDial.DisplayedNum) Completed = true;
-        //    else Completed = false;
-        if (NumLock.Completed == true) ComboCompleted = true;
-        else ComboCompleted = false;
-    }
+    //private void CheckCombo() {
+    //    //    if (NumberDial.TargetNumber == NumberDial.DisplayedNum) Completed = true;
+    //    //    else Completed = false;
+    //    if (NumLock.Completed == true) ComboCompleted = true;
+    //    else ComboCompleted = false;
+    //}
     
 
 
