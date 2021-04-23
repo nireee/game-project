@@ -84,7 +84,7 @@ public class PuzzlePiece : DragableObject
             if(!Dragable) return;
             foreach (Neighbor neighbor in Neighbors)
             {
-            if (checkPiecePossition(neighbor)){
+            if (neighbor.Piece && checkPiecePossition(neighbor)){
                 if(neighbor.Piece.Dragable){
                     neighbor.Piece.transform.position = (Vector2)transform.position + neighbor.Offset;
                     ParentChildSwapping(transform.GetComponent<PuzzlePiece>(), neighbor.Piece);
