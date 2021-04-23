@@ -108,6 +108,7 @@ public class Inventory : MonoBehaviour
                 InventoryItems[i] = newItem;
                 newItem.SetItemState(ItemStates[i]);
                 newItem.AnimationState = Item.AnimationStates.docked;
+                newItem.DefaultScale = newItem.transform.lossyScale;
                 Dock.AddItem(newItem);
                 newItem.DockItem();
             }

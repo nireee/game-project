@@ -39,15 +39,17 @@ public class Item : MonoBehaviour
     private float maximizedPauseStart;
     private bool maximizedCancel = false;
 
-    private Vector2 DefaultScale;
+    public Vector2 DefaultScale;
     private float TargetScale;
     private Vector2 TargetLoc;
 
     public static int OrderInLayer = 1;
 
+    private bool preloaded = false;
+
     private void Start()
     {
-        DefaultScale = transform.lossyScale;
+        if(!preloaded) DefaultScale = transform.lossyScale;
     }
 
     private void Update()
@@ -128,8 +130,9 @@ public class Item : MonoBehaviour
 
     private bool scaleItem(float rate)
     {
+        rate *= DefaultScale.x;
         float currentScale = transform.localScale.x / DefaultScale.x;
-        if(rate < 0 && TargetScale - currentScale > rate * Time.deltaTime || rate > 0 && TargetScale - currentScale < rate * Time.deltaTime)
+        if (rate < 0 && TargetScale - currentScale > rate * Time.deltaTime || rate > 0 && TargetScale - currentScale < rate * Time.deltaTime)
         {
             transform.localScale = TargetScale * DefaultScale;
             return true;
@@ -179,6 +182,7 @@ public class Item : MonoBehaviour
 
     public void DockItem()
     {
+        preloaded = true;
         AnimationState = AnimationStates.docked;
         transform.localScale = DockScale * DefaultScale;
         if (!FindObjectOfType<Inventory>().isInInventory(this))
