@@ -13,6 +13,7 @@ public class NumberLock : MonoBehaviour
     public bool expanding = false;
     private bool open;
 
+
     private Vector2 DefaultScale;
     private float TargetScale;
     public float ExpandedScale = 4;
@@ -21,6 +22,8 @@ public class NumberLock : MonoBehaviour
     void Start()
     {
         DefaultScale = transform.lossyScale;
+        
+        
     }
 
     // Update is called once per frame
@@ -32,11 +35,14 @@ public class NumberLock : MonoBehaviour
         {
             TargetScale = ExpandedScale;
             Expanded = scaleItem(ExpansionRate);
+            if (Expanded) GetComponent<BoxCollider2D>().enabled = false;
         }
         else if(Expanded && !expanding)
         {
             TargetScale = 1;
             Expanded = !scaleItem(-ExpansionRate);
+            if (!Expanded) GetComponent<BoxCollider2D>().enabled = true;
+
         }
     }
     void CheckCombo()
@@ -82,6 +88,7 @@ public class NumberLock : MonoBehaviour
             else if(Expanded && expanding && Completed)
             {
                 //open drawer
+                
             }
         }
     }
