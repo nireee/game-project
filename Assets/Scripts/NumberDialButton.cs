@@ -11,7 +11,11 @@ public class NumberDialButton : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (DialUp) NumberDial.MoveDialUp();
+        if (DialUp)
+        {
+            print("clicked");
+            NumberDial.MoveDialUp();
+        }
         else NumberDial.MoveDialDown();
 
     }

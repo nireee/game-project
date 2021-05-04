@@ -6,9 +6,12 @@ public class NumberLock : MonoBehaviour
 {
     public NumberDial Dial1, Dial2, Dial3;
     public int num1, num2, num3;
+
+    //boolean
     public bool Completed;
     public bool Expanded;
     public bool expanding = false;
+    private bool open;
 
     private Vector2 DefaultScale;
     private float TargetScale;
@@ -68,6 +71,18 @@ public class NumberLock : MonoBehaviour
             float yScale = DefaultScale.y / DefaultScale.x;
             transform.localScale += rate * Time.deltaTime * new Vector3(1, yScale, 1);
             return false;
+        }
+    }
+
+    private void OnMouseDown()
+    {
+        if (FindObjectOfType<TouchHandler>().CanTouch(gameObject))
+        {
+            if (!Expanded && !expanding) expanding = true;
+            else if(Expanded && expanding && Completed)
+            {
+                //open drawer
+            }
         }
     }
 }
