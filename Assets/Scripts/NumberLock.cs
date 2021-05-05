@@ -13,7 +13,7 @@ public class NumberLock : MonoBehaviour
     public bool expanding = false;
     private bool open;
 
-    public GameObject Drawer;
+    public GameObject DrawerInside;
     public GameObject LockMesh;
 
     public SpriteButton CancelButton;
@@ -27,7 +27,7 @@ public class NumberLock : MonoBehaviour
     {
         DefaultScale = transform.lossyScale;
         CancelButton.gameObject.SetActive(false);
-        Drawer.SetActive(false);
+        DrawerInside.SetActive(false);
 
     }
 
@@ -99,10 +99,10 @@ public class NumberLock : MonoBehaviour
             if (!Expanded && !expanding) expanding = true;
             else if(Expanded && expanding && Completed)
             {
-                //open drawer
-                Drawer.SetActive(true);
-                GetComponent<BoxCollider2D>().enabled = false;
-                LockMesh.SetActive(false);
+                ////open DrawerInside
+                //DrawerInside.SetActive(true);
+                //GetComponent<BoxCollider2D>().enabled = false;
+                //LockMesh.SetActive(false);
 
             }
         }
@@ -116,7 +116,7 @@ public class NumberLock : MonoBehaviour
         
         CancelButton.gameObject.SetActive(false);
         GetComponent<BoxCollider2D>().enabled = true;
-        Drawer.SetActive(false);
+        DrawerInside.SetActive(false);
         LockMesh.SetActive(true);
     }
 }
