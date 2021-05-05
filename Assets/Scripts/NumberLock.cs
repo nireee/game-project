@@ -13,6 +13,10 @@ public class NumberLock : MonoBehaviour
     public bool expanding = false;
     private bool open;
 
+    public GameObject Drawer;
+    public GameObject LockMesh;
+
+    public SpriteButton CancelButton;
 
     private Vector2 DefaultScale;
     private float TargetScale;
@@ -22,8 +26,9 @@ public class NumberLock : MonoBehaviour
     void Start()
     {
         DefaultScale = transform.lossyScale;
-        
-        
+        CancelButton.gameObject.SetActive(false);
+        Drawer.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -31,18 +36,25 @@ public class NumberLock : MonoBehaviour
     {
         CheckCombo();
 
-        if(!Expanded && expanding)
+        if (!Expanded && expanding)
         {
             TargetScale = ExpandedScale;
             Expanded = scaleItem(ExpansionRate);
-            if (Expanded) GetComponent<BoxCollider2D>().enabled = false;
+            if (Expanded)
+            {
+                GetComponent<BoxCollider2D>().enabled = false;
+                CancelButton.gameObject.SetActive(true);
+            }
         }
-        else if(Expanded && !expanding)
+        else if (Expanded && !expanding)
         {
             TargetScale = 1;
             Expanded = !scaleItem(-ExpansionRate);
             if (!Expanded) GetComponent<BoxCollider2D>().enabled = true;
-
+        }
+        else if (Completed && !GetComponent<BoxCollider2D>().enabled)
+        {
+            GetComponent<BoxCollider2D>().enabled = true;
         }
     }
     void CheckCombo()
@@ -88,8 +100,23 @@ public class NumberLock : MonoBehaviour
             else if(Expanded && expanding && Completed)
             {
                 //open drawer
-                
+                Drawer.SetActive(true);
+                GetComponent<BoxCollider2D>().enabled = false;
+                LockMesh.SetActive(false);
+
             }
         }
+    }
+
+    private void SpriteButton()
+    {
+        transform.localScale = DefaultScale;
+        expanding = false;
+        Expanded = false;
+        
+        CancelButton.gameObject.SetActive(false);
+        GetComponent<BoxCollider2D>().enabled = true;
+        Drawer.SetActive(false);
+        LockMesh.SetActive(true);
     }
 }

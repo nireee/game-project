@@ -167,7 +167,8 @@ public class Item : MonoBehaviour
 
     private void IncrementSortingOrder()
     {
-        OrderInLayer += 2;
+        if (GetComponent<SpriteRenderer>().sortingOrder <= OrderInLayer) OrderInLayer += 2;
+        else OrderInLayer = GetComponent<SpriteRenderer>().sortingOrder + 2;
         GetComponent<SpriteRenderer>().sortingOrder = OrderInLayer;
     }
 
@@ -193,6 +194,7 @@ public class Item : MonoBehaviour
 
 
     private void itemFound(){
+        transform.parent = null;
 
         FindObjectOfType<TouchHandler>().ClearCanTouchObjects(null);
         TargetLoc = (Vector2)transform.position + PopOutTranslation;
