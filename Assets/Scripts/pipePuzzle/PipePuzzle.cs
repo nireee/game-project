@@ -7,19 +7,69 @@ public class PipePuzzle : MonoBehaviour
     public int Width = 3;
     public int Height = 4;
     public List<Pipe> pipes;
+
+    public Pipe StartPipe, EndPipe;
+    public bool Completed = false;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        HandlePipePath();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!Completed && EndPipe.hasWater) Completed = true;
+    }
+
+    public bool CanTouch(Pipe pipe)
+    {
+        if(!Completed && pipe != StartPipe && pipe != EndPipe)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public void HandlePipePath()
+    {
+        Pipe source = null;
         foreach (Pipe pipe in pipes)
         {
-            pipe.hasWater = checkForWater(pipe);
+            //pipe.hasWater = checkForWater(pipe);
 
+            if (pipe.isSource)
+            {
+                pipe.hasWater = true;
+                source = pipe;
+            }
+            else
+            {
+                pipe.hasWater = false;
+            }
+        }
+
+        List<Pipe> frontier = new List<Pipe>(); //will only have pipe with water
+        List<Pipe> visited = new List<Pipe>(); 
+        frontier.Add(source);
+        while(frontier.Count > 0)
+        {
+            Pipe current = frontier[0];
+            frontier.RemoveAt(0);
+            visited.Add(current);
+            List<Pipe> neighbors = getPipeNeighbors(current);
+            foreach(Pipe neighbor in neighbors)
+            {
+                if(!visited.Contains(neighbor) && checkForWater(neighbor))
+                {
+                    neighbor.hasWater = true;
+                    frontier.Add(neighbor);
+                }
+            }
         }
     }
 
@@ -34,6 +84,19 @@ public class PipePuzzle : MonoBehaviour
         if (checkConnection(pipe, x, y, new Vector2(0, 1))) return true;
         if (checkConnection(pipe, x, y, new Vector2(0, -1))) return true;
         return false;
+    }
+
+    private List<Pipe> getPipeNeighbors(Pipe pipe)
+    {
+        int pipeID = pipes.IndexOf(pipe);
+        int x = pipeID % Width;
+        int y = pipeID / Width;
+        List<Pipe> neighbors = new List<Pipe>();
+        if (getPipe(x + 1, y)) neighbors.Add(getPipe(x + 1, y));
+        if (getPipe(x - 1, y)) neighbors.Add(getPipe(x - 1, y));
+        if (getPipe(x, y + 1)) neighbors.Add(getPipe(x, y + 1));
+        if (getPipe(x, y - 1)) neighbors.Add(getPipe(x, y - 1));
+        return neighbors;
     }
 
     public Pipe getPipe(int x, int y)

@@ -45,4 +45,14 @@ public class Pipe : MonoBehaviour
         }
         return false;
     }
+
+    private void OnMouseDown()
+    {
+        if (FindObjectOfType<PipePuzzle>().CanTouch(this))
+        {
+            transform.Rotate(new Vector3(0, 0, -90));
+            FindObjectOfType<PipePuzzle>().HandlePipePath();
+        }
+        
+    }
 }
