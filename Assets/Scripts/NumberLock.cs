@@ -52,7 +52,7 @@ public class NumberLock : MonoBehaviour
             Expanded = !scaleItem(-ExpansionRate);
             if (!Expanded) GetComponent<BoxCollider2D>().enabled = true;
         }
-        else if (Completed && !GetComponent<BoxCollider2D>().enabled)
+        else if (Completed && !GetComponent<BoxCollider2D>().enabled && !DrawerInside.activeSelf)
         {
             GetComponent<BoxCollider2D>().enabled = true;
         }
@@ -96,15 +96,16 @@ public class NumberLock : MonoBehaviour
     {
         if (FindObjectOfType<TouchHandler>().CanTouch(gameObject))
         {
-            if (!Expanded && !expanding) expanding = true;
-            else if(Expanded && expanding && Completed)
+            if (Completed)
             {
-                ////open DrawerInside
-                //DrawerInside.SetActive(true);
-                //GetComponent<BoxCollider2D>().enabled = false;
-                //LockMesh.SetActive(false);
+                //open DrawerInside
+                DrawerInside.SetActive(true);
+                GetComponent<BoxCollider2D>().enabled = false;
+                LockMesh.SetActive(false);
+                CancelButton.gameObject.SetActive(true);
 
             }
+            else if (!Expanded && !expanding) expanding = true;
         }
     }
 

@@ -18,6 +18,7 @@ public class Portal : MonoBehaviour
 
     private void loadScene()
     {
-        SceneManager.LoadScene(LoadSceneName);
+        //SceneManager.LoadScene(LoadSceneName);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
