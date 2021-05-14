@@ -28,7 +28,7 @@ public class Item : MonoBehaviour
     public AnimationStates AnimationState;
     public Vector2 PopOutTranslation = new Vector2(2, 0);
     public float PopOutTranslationSpeed = 0.5f; // units per second
-    private Vector2 MaximizeLoc = new Vector2(0, 0);
+    private Vector3 MaximizeLoc = new Vector3(0, 0, foundZDepth);
     public float MaximiziedScale = 2;
     public float MaximizingRate = 0.25f;
     public float DockScale = 0.5f;
@@ -41,9 +41,10 @@ public class Item : MonoBehaviour
 
     public Vector2 DefaultScale;
     private float TargetScale;
-    private Vector2 TargetLoc;
+    private Vector3 TargetLoc;
 
     public static int OrderInLayer = 1;
+    private static float foundZDepth = -5;
 
     private bool preloaded = false;
 
@@ -62,7 +63,8 @@ public class Item : MonoBehaviour
             case AnimationStates.poppingOut:
                 if (translateItem(PopOutTranslationSpeed))
                 {
-                    IncrementSortingOrder();
+                    print("Increment");
+                   IncrementSortingOrder();
                    AnimationState += 1;
                 }
                 
@@ -123,7 +125,7 @@ public class Item : MonoBehaviour
         }
         else
         {
-            transform.position = Vector2.MoveTowards(transform.position, TargetLoc, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, TargetLoc, speed * Time.deltaTime);
             return false;
         }
     }
@@ -165,10 +167,12 @@ public class Item : MonoBehaviour
         
     }
 
+    
     private void IncrementSortingOrder()
     {
         if (GetComponent<SpriteRenderer>().sortingOrder <= OrderInLayer) OrderInLayer += 2;
         else OrderInLayer = GetComponent<SpriteRenderer>().sortingOrder + 2;
+        transform.position = new Vector3(transform.position.x, transform.position.y, foundZDepth);
         GetComponent<SpriteRenderer>().sortingOrder = OrderInLayer;
     }
 
