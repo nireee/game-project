@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2205b458fcd3b45d3ab24aff40612901
+guid: 240d2a6d6cb864407b240f709890c51b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3040370939833982598
-    second: Hour hand_0
+      213: -4136729397018612694
+    second: drawer_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -150,22 +150,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hour hand_0
+      name: drawer_0
       rect:
         serializedVersion: 2
-        x: 1757
-        y: 1172
-        width: 298
-        height: 291
-      alignment: 9
-      pivot: {x: 0.029028567, y: 0.030065792}
+        x: 95
+        y: 101
+        width: 440
+        height: 729
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68e993ed241913a20800000000000000
-      internalID: 3040370939833982598
+      spriteID: a2c2aced7826796c0800000000000000
+      internalID: -4136729397018612694
       vertices: []
       indices: 
       edges: []
