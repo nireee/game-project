@@ -16,6 +16,8 @@ public class NumberDial : MonoBehaviour
     public int CurrentNum;
 
     public NumberLock NumberLock;
+    public int[] numlist = new int[9];
+    public bool movingUp = false;
 
     // Start is called before the first frame update
     void Start()
@@ -32,12 +34,12 @@ public class NumberDial : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        handleNumberPlacement();
         moving();
+        handleNumberPlacement();
+        
     }
-    public int[] numlist = new int[9];
-    public bool movingUp = false;
-    public bool movingDown = false;
+    
+    //public bool movingDown = false;
     void handleNumberPlacement()
     {
         float yPos = -NumbersContainer.localPosition.y % totalDelta;
@@ -50,7 +52,7 @@ public class NumberDial : MonoBehaviour
             //check moving up
             bool middle = (i != 0 && i != 8 && (movingUp && yPos < NumbersDelta[i + 1] && yPos > NumbersDelta[i - 1] || !movingUp &&  yPos > NumbersDelta[i - 1] && yPos <= NumbersDelta[i]));
             bool top = (i == 8 && (yPos > NumbersDelta[7] || yPos < NumbersDelta[0]));
-            bool bottom = (i == 0 && ((!movingUp && yPos > 0 && yPos < NumbersDelta[1]) )); //|| (movingUp && yPos > NumbersDelta[8])
+            bool bottom = (i == 0 && ((!movingUp && yPos > 0 && yPos < NumbersDelta[1]) )); 
             if (middle || bottom || top)
             //if (yPos < NumbersDelta[i + 1])
 
@@ -142,7 +144,7 @@ public class NumberDial : MonoBehaviour
     {
         float targetY = -NumbersDelta[TargetNumber - 1];
         movingUp = targetY > NumbersContainer.localPosition.y;
-        movingDown = targetY < NumbersContainer.localPosition.y;
+        //movingDown = targetY < NumbersContainer.localPosition.y;
 
         if (TargetNumber == 1 && NumbersContainer.localPosition.y < -NumbersDelta[6]) targetY = -NumbersDelta[8] - NumbersDelta[0];
         else if (TargetNumber == 9 && NumbersContainer.localPosition.y > -NumbersDelta[2]) targetY = 0;

@@ -48,9 +48,15 @@ public class Item : MonoBehaviour
 
     private bool preloaded = false;
 
+    public SpriteRenderer AlternateSprite;
+
     private void Start()
     {
         if(!preloaded) DefaultScale = transform.lossyScale;
+
+        //handles SpriteRenderer not being on the parent object
+        sprite = GetComponent<SpriteRenderer>();
+        if (!sprite) sprite = AlternateSprite;
     }
 
     private void Update()
@@ -167,13 +173,14 @@ public class Item : MonoBehaviour
         
     }
 
-    
+    private SpriteRenderer sprite;
     private void IncrementSortingOrder()
     {
-        if (GetComponent<SpriteRenderer>().sortingOrder <= OrderInLayer) OrderInLayer += 2;
-        else OrderInLayer = GetComponent<SpriteRenderer>().sortingOrder + 2;
+
+        if (sprite.sortingOrder <= OrderInLayer) OrderInLayer += 2;
+        else OrderInLayer = sprite.sortingOrder + 2;
         transform.position = new Vector3(transform.position.x, transform.position.y, foundZDepth);
-        GetComponent<SpriteRenderer>().sortingOrder = OrderInLayer;
+        sprite.sortingOrder = OrderInLayer;
     }
 
     //private void OnMouseUp(){
