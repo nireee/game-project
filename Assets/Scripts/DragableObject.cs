@@ -16,8 +16,14 @@ public class DragableObject : MonoBehaviour
 
 
     private void OnMouseDrag(){
+        OnMouseDragOverride();
+    }
+
+    protected void OnMouseDragOverride()
+    {
         if (!FindObjectOfType<TouchHandler>().CanTouch(gameObject)) return;
-        if (Dragable){
+        if (Dragable)
+        {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = new Vector3(mousePos.x, mousePos.y, transform.position.z) + (Vector3)displacement;
         }

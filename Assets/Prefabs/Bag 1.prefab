@@ -87,6 +87,8 @@ MonoBehaviour:
   - {fileID: 129569465145247646, guid: a7fef24e1a68c46aaa2f2fffa3d75ae8, type: 3}
   - {fileID: 5812244499899607585, guid: 3fba38bd74f694f72a659b6da9e2020f, type: 3}
   - {fileID: 7919678074190095583, guid: bccc5ba456c204edcbe8e8678997a655, type: 3}
+  - {fileID: 2148847922660698158, guid: ab55d056504724fb3a728e472e256c64, type: 3}
+  - {fileID: 8280930731552643773, guid: 21ed64477bfe64fc783257c4034dbaf7, type: 3}
   InventoryItemIDs: 
   ItemStates: 
   Dock: {fileID: 5111704499863494177}
@@ -136,6 +138,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -219,6 +222,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

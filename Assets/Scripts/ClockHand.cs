@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClockHand : MonoBehaviour
+public class ClockHand : DragableObject
 {
     public ClockPuzzle CP;
     private Item itemScript;
@@ -20,6 +20,17 @@ public class ClockHand : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (itemScript.GetItemStates() != Item.ItemStates.hidden && itemScript.GetItemStates() != Item.ItemStates.placed)
+        {
+            if (itemScript.AnimationState == Item.AnimationStates.docked) itemScript.AnimationState = Item.AnimationStates.undocking;
+            Dragable = true;
+            displacement = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            itemScript.IncrementSortingOrder();
+        }
+        else
+        {
+            Dragable = false;
+        }
         
     }
 
@@ -27,13 +38,25 @@ public class ClockHand : MonoBehaviour
     {
         if (CP.CanTouch())
         {
-            if(itemScript.AnimationState == Item.AnimationStates.docked)
+            if (itemScript.GetItemStates() == Item.ItemStates.placed)
             {
                 float angle = CP.GetAngle(Camera.main.ScreenToWorldPoint(Input.mousePosition));
                 transform.eulerAngles = new Vector3(0, 0, angle);
             }
+            else
+            {
+                OnMouseDragOverride();
+            }
 
+           
         }
-        
+    }
+
+    private void OnMouseUp()
+    {
+        if(itemScript.AnimationState == Item.AnimationStates.undocked && CP.CheckHandDropRadius(Camera.main.ScreenToWorldPoint(Input.mousePosition), transform))
+        {
+            itemScript.SetItemState(Item.ItemStates.placed);
+        }
     }
 }
