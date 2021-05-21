@@ -12,8 +12,12 @@ public class Portal : MonoBehaviour
 
     private void OnMouseUp()
     {
-        FindObjectOfType<TouchHandler>().ClearCanTouchObjects(null);
-        loadScene();
+        if (Active)
+        {
+            FindObjectOfType<TouchHandler>().ClearCanTouchObjects(null);
+            loadScene();
+        }
+        
     }
 
     private void loadScene()

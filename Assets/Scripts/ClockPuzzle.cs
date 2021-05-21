@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClockPuzzle : MonoBehaviour
+public class ClockPuzzle : Zoomable
 {
     public Transform ClockDial;
     public ClockHand Minute, Hour;
@@ -16,21 +16,28 @@ public class ClockPuzzle : MonoBehaviour
     public int Minutes = -1;
     public int Hours = -1;
 
-    public bool Completed = false;
+    //public bool Completed = false;
 
     public float HandDropRadius = 1;
+
+    public Portal TV;
     // Start is called before the first frame update
     void Start()
     {
-
-        
+        ParentStart();
+        //ZoomCollider.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        ParentUpdate();
         CheckHand();
-        if (Minutes == MinuteSolution && Hours == HourSolution) Completed = true;
+        if (!Completed && Minutes == MinuteSolution && Hours == HourSolution)
+        {
+            Completed = true;
+            TV.Active = true;
+        }
     }
     public bool CheckHandDropRadius(Vector2 point, Transform hand)
     {
@@ -105,10 +112,40 @@ public class ClockPuzzle : MonoBehaviour
         return GetAngle(ClockDial.position, point);
     }
 
+
     public bool CanTouch()
     {
         if (FindObjectOfType<TouchHandler>().CanTouch(gameObject) && !Completed) return true;
         else return false;
     }
 
+    protected override bool completedCondition()
+    {
+        return Completed ;
+    }
+
+    protected override void completedOpen()
+    {
+        //open DrawerInside
+        
+
+    }
+
+
+
+    protected override void closeZoomable()
+    {
+        transform.localScale = DefaultScale;
+        
+    }
+
+    protected override bool openPuzzleCheck()
+    {
+        return Hour.isPlaced && Minute.isPlaced;
+    }
+
+    //public void HandPlaced()
+    //{
+    //    if (Hour.isPlaced && Minute.isPlaced) ZoomCollider.enabled = true;
+    //}
 }
