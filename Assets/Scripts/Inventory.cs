@@ -18,6 +18,7 @@ public class Inventory : MonoBehaviour
         // Singlton
         if(StaticInventory == null)
         {
+            transform.parent = null;
             DontDestroyOnLoad(gameObject);
             StaticInventory = this;
         }

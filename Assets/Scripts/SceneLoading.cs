@@ -27,7 +27,8 @@ public class SceneLoading : MonoBehaviour
         }
         else if (!InventoryLoaded && FindObjectOfType<Inventory>())
         {
-            FindObjectOfType<Inventory>().LoadInventory();
+            if (!FindObjectOfType<Basement>()) FindObjectOfType<Inventory>().LoadInventory();
+            else Destroy(FindObjectOfType<Inventory>());
             InventoryLoaded = true;
         }
     }

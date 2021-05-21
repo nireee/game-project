@@ -173,7 +173,7 @@ public class Item : MonoBehaviour
     }
 
     private SpriteRenderer sprite;
-    private void IncrementSortingOrder()
+    public void IncrementSortingOrder()
     {
         if (sprite.sortingOrder <= OrderInLayer) OrderInLayer += 2;
         else OrderInLayer = sprite.sortingOrder + 2;

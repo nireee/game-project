@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemPrefab: {fileID: 7120029500477865852}
-  ItemID: -1
+  ItemID: 10
   ItemState: 0
   AnimationState: 0
   PopOutTranslation: {x: 2, y: 0}

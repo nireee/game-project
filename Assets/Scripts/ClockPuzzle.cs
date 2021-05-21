@@ -13,10 +13,13 @@ public class ClockPuzzle : MonoBehaviour
     public int HourSolution = 8;
 
     //current value of the hands
-    private int Minutes = -1;
-    private int Hours = -1;
+    public int Minutes = -1;
+    public int Hours = -1;
 
     public bool Completed = false;
+
+    public float HandDropRadius = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,61 +34,77 @@ public class ClockPuzzle : MonoBehaviour
         if (Minutes == MinuteSolution && Hours == HourSolution) Completed = true;
     }
 
+    public bool CheckHandDropRadius(Vector2 point, Transform hand)
+    {
+        if (Vector2.Distance(point, ClockDial.position) < HandDropRadius)
+        {
+            hand.position = new Vector3(ClockDial.position.x, ClockDial.position.y, hand.position.z);
+            return true;
+        }
+        else return false;
+    }
+
     public void CheckHand()
     {
-        Vector2 Hour_vec = new Vector2(Hour.transform.position.x, Hour.transform.position.y);
-        float h_angle = GetAngle(Hour_vec);
-        if(h_angle <= 90)
-        {
-            Hours = 3;
-            int result = (int)h_angle / 30;
-            Hours -= result;
-        }
-        else if(h_angle > 90 && h_angle <= 180)
-        {
-            Hours = 12;
-            int result = (int)h_angle / 30;
-            Hours -= (3- result);
-        }
-        else if(h_angle > 180 && h_angle <= 270)
-        {
-            Hours = 9;
-            int result = (int)h_angle / 30;
-            Hours -= result;
-        }
-        else if(h_angle >270 && h_angle <= 360)
-        {
-            Hours = 6;
-            int result = (int)h_angle / 30;
-            Hours -= (3 - result);
-        }
+        //Vector2 Hour_vec = new Vector2(Hour.transform.position.x, Hour.transform.position.y);
+        //if(h_angle <= 90)
+        //{
+        //    Hours = 3;
+        //    int result = (int)h_angle / 30;
+        //    Hours -= result;
+        //}
+        //else if(h_angle > 90 && h_angle <= 180)
+        //{
+        //    Hours = 12;
+        //    int result = (int)h_angle / 30;
+        //    Hours -= (3- result);
+        //}
+        //else if(h_angle > 180 && h_angle <= 270)
+        //{
+        //    Hours = 9;
+        //    int result = (int)h_angle / 30;
+        //    Hours -= result;
+        //}
+        //else if(h_angle >270 && h_angle <= 360)
+        //{
+        //    Hours = 6;
+        //    int result = (int)h_angle / 30;
+        //    Hours -= (3 - result);
+        //}
+        float h_angle = Hour.transform.eulerAngles.z;
+        int h_inverse = (int)((360-h_angle) / 30);
+        Hours = h_inverse + 3;
+        Hours = Hours > 12 ? Hours - 12 : Hours;
 
-        Vector2 Minute_vec = new Vector2(Minute.transform.position.x, Minute.transform.position.y);
-        float m_angle = GetAngle(Minute_vec);
-        if (m_angle <= 90)
-        {
-            Minutes = 15;
-            int result = (int)m_angle / 6;
-            Minutes -= result;
-        }
-        else if (m_angle > 90 && m_angle <= 180)
-        {
-            Minutes = 60;
-            int result = (int)m_angle / 6;
-            Minutes -= (15 - result);
-        }
-        else if (m_angle > 180 && m_angle <= 270)
-        {
-            Minutes = 45;
-            int result = (int)m_angle / 6;
-            Minutes -= result;
-        }
-        else if (m_angle > 270 && m_angle <= 360)
-        {
-            Minutes = 30;
-            int result = (int)m_angle / 6;
-            Minutes -= (15 - result);
-        }
+        //Vector2 Minute_vec = new Vector2(Minute.transform.position.x, Minute.transform.position.y);
+        float m_angle = Minute.transform.eulerAngles.z;
+        int m_inverse = (int)((360 - m_angle) / 6);
+        Minutes = m_inverse + 15;
+        Minutes = Minutes > 59 ? Minutes - 60 : Minutes;
+        //if (m_angle <= 90)
+        //{
+        //    Minutes = 15;
+        //    int result = (int)m_angle / 6;
+        //    Minutes -= result;
+        //}
+        //else if (m_angle > 90 && m_angle <= 180)
+        //{
+        //    Minutes = 60;
+        //    int result = (int)m_angle / 6;
+        //    Minutes -= (15 - result);
+        //}
+        //else if (m_angle > 180 && m_angle <= 270)
+        //{
+        //    Minutes = 45;
+        //    int result = (int)m_angle / 6;
+        //    Minutes -= result;
+        //}
+        //else if (m_angle > 270 && m_angle <= 360)
+        //{
+        //    Minutes = 30;
+        //    int result = (int)m_angle / 6;
+        //    Minutes -= (15 - result);
+        //}
 
 
 

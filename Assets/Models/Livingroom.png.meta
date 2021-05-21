@@ -1,0 +1,548 @@
+fileFormatVersion: 2
+guid: 826797a7ddde644be90b491d7be432c4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7219628958212689294
+    second: "a\u0302\x80\x94Pngtreea\u0302\x80\x94vector living room_934414_0"
+  - first:
+      213: -40509935533404157
+    second: "a\u0302\x80\x94Pngtreea\u0302\x80\x94vector living room_934414_1"
+  - first:
+      213: 8265409806000819387
+    second: "a\u0302\x80\x94Pngtreea\u0302\x80\x94vector living room_934414_2"
+  - first:
+      213: -218487271368700909
+    second: "a\u0302\x80\x94Pngtreea\u0302\x80\x94vector living room_934414_3"
+  - first:
+      213: -5996085749376952598
+    second: "a\u0302\x80\x94Pngtreea\u0302\x80\x94vector living room_934414_4"
+  - first:
+      213: 5987662860731073644
+    second: "a\u0302\x80\x94Pngtreea\u0302\x80\x94vector living room_934414_5"
+  - first:
+      213: -5183288170572223151
+    second: "a\u0302\x80\x94Pngtreea\u0302\x80\x94vector living room_934414_6"
+  - first:
+      213: 4777594099527220782
+    second: "a\u0302\x80\x94Pngtreea\u0302\x80\x94vector living room_934414_7"
+  - first:
+      213: -7201840056347012218
+    second: "a\u0302\x80\x94Pngtreea\u0302\x80\x94vector living room_934414_8"
+  - first:
+      213: 3713157125687740464
+    second: "a\u0302\x80\x94Pngtreea\u0302\x80\x94vector living room_934414_9"
+  - first:
+      213: 4389917158029222953
+    second: "a\u0302\x80\x94Pngtreea\u0302\x80\x94vector living room_934414_10"
+  - first:
+      213: -3058780680037592525
+    second: "a\u0302\x80\x94Pngtreea\u0302\x80\x94vector living room_934414_11"
+  - first:
+      213: -1316353801924954327
+    second: "a\u0302\x80\x94Pngtreea\u0302\x80\x94vector living room_934414_12"
+  - first:
+      213: 8487259302143444767
+    second: "a\u0302\x80\x94Pngtreea\u0302\x80\x94vector living room_934414_13"
+  - first:
+      213: -1617323155189913836
+    second: "a\u0302\x80\x94Pngtreea\u0302\x80\x94vector living room_934414_14"
+  - first:
+      213: -7395553002675122331
+    second: "a\u0302\x80\x94Pngtreea\u0302\x80\x94vector living room_934414_15"
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Lumin
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "a\u0302\x80\x94Pngtreea\u0302\x80\x94vector living room_934414_0"
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 699
+        width: 257
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 272fb97b6b9becb90800000000000000
+      internalID: -7219628958212689294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "a\u0302\x80\x94Pngtreea\u0302\x80\x94vector living room_934414_1"
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 833
+        width: 147
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30058a2ad64107ff0800000000000000
+      internalID: -40509935533404157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "a\u0302\x80\x94Pngtreea\u0302\x80\x94vector living room_934414_2"
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 867
+        width: 11
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbc85b13d62a4b270800000000000000
+      internalID: 8265409806000819387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "a\u0302\x80\x94Pngtreea\u0302\x80\x94vector living room_934414_3"
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 678
+        width: 259
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31ccf1afbf6c7fcf0800000000000000
+      internalID: -218487271368700909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "a\u0302\x80\x94Pngtreea\u0302\x80\x94vector living room_934414_4"
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 811
+        width: 271
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae6da9197cf99cca0800000000000000
+      internalID: -5996085749376952598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "a\u0302\x80\x94Pngtreea\u0302\x80\x94vector living room_934414_5"
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 191
+        width: 963
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c64cca8d5a3781350800000000000000
+      internalID: 5987662860731073644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "a\u0302\x80\x94Pngtreea\u0302\x80\x94vector living room_934414_6"
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 39
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15dee800fd24118b0800000000000000
+      internalID: -5183288170572223151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "a\u0302\x80\x94Pngtreea\u0302\x80\x94vector living room_934414_7"
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 39
+        width: 27
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2e725f458c6d4240800000000000000
+      internalID: 4777594099527220782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "a\u0302\x80\x94Pngtreea\u0302\x80\x94vector living room_934414_8"
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 39
+        width: 7
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 683d14030aced0c90800000000000000
+      internalID: -7201840056347012218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "a\u0302\x80\x94Pngtreea\u0302\x80\x94vector living room_934414_9"
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 34
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03804df8bb8c78330800000000000000
+      internalID: 3713157125687740464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "a\u0302\x80\x94Pngtreea\u0302\x80\x94vector living room_934414_10"
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 39
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92469bd756e1cec30800000000000000
+      internalID: 4389917158029222953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "a\u0302\x80\x94Pngtreea\u0302\x80\x94vector living room_934414_11"
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 39
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33218887d270d85d0800000000000000
+      internalID: -3058780680037592525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "a\u0302\x80\x94Pngtreea\u0302\x80\x94vector living room_934414_12"
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 39
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9273785013f5bbde0800000000000000
+      internalID: -1316353801924954327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "a\u0302\x80\x94Pngtreea\u0302\x80\x94vector living room_934414_13"
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 39
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f17c3ec2e5dc8c570800000000000000
+      internalID: 8487259302143444767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "a\u0302\x80\x94Pngtreea\u0302\x80\x94vector living room_934414_14"
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 34
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41724e7c82d1e89e0800000000000000
+      internalID: -1617323155189913836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "a\u0302\x80\x94Pngtreea\u0302\x80\x94vector living room_934414_15"
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 34
+        width: 115
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56fc9f53ab7bd5990800000000000000
+      internalID: -7395553002675122331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
