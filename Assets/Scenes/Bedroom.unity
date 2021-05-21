@@ -1182,6 +1182,11 @@ PrefabInstance:
       propertyPath: DrawerInside
       value: 
       objectReference: {fileID: 215919253}
+    - target: {fileID: 6480524763269006609, guid: 31493a400989f42dcae763e2e9317ad2,
+        type: 3}
+      propertyPath: ZoomCollider
+      value: 
+      objectReference: {fileID: 1725993124}
     - target: {fileID: 6480524763269006622, guid: 31493a400989f42dcae763e2e9317ad2,
         type: 3}
       propertyPath: m_Name
@@ -1189,6 +1194,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31493a400989f42dcae763e2e9317ad2, type: 3}
+--- !u!61 &1725993124 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 6480524763269006608, guid: 31493a400989f42dcae763e2e9317ad2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1725993123}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1793929758 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6480524763269006622, guid: 31493a400989f42dcae763e2e9317ad2,

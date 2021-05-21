@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClockPuzzle : MonoBehaviour
+public class ClockPuzzle : Zoomable
 {
     public Transform ClockDial;
     public ClockHand Minute, Hour;
@@ -16,24 +16,30 @@ public class ClockPuzzle : MonoBehaviour
     public int Minutes = -1;
     public int Hours = -1;
 
-    public bool Completed = false;
+    public Portal TV;
+
+    //public bool Completed = false;
 
     public float HandDropRadius = 1;
-
     // Start is called before the first frame update
     void Start()
     {
+        ParentStart();
+        //ZoomCollider.enabled = false;
 
-        
     }
 
     // Update is called once per frame
     void Update()
     {
+        ParentUpdate();
         CheckHand();
-        if (Minutes == MinuteSolution && Hours == HourSolution) Completed = true;
+        if (Minutes == MinuteSolution && Hours == HourSolution)
+        {
+            Completed = true;
+            TV.Active = true;
+        }
     }
-
     public bool CheckHandDropRadius(Vector2 point, Transform hand)
     {
         if (Vector2.Distance(point, ClockDial.position) < HandDropRadius)
@@ -46,65 +52,19 @@ public class ClockPuzzle : MonoBehaviour
 
     public void CheckHand()
     {
-        //Vector2 Hour_vec = new Vector2(Hour.transform.position.x, Hour.transform.position.y);
-        //if(h_angle <= 90)
-        //{
-        //    Hours = 3;
-        //    int result = (int)h_angle / 30;
-        //    Hours -= result;
-        //}
-        //else if(h_angle > 90 && h_angle <= 180)
-        //{
-        //    Hours = 12;
-        //    int result = (int)h_angle / 30;
-        //    Hours -= (3- result);
-        //}
-        //else if(h_angle > 180 && h_angle <= 270)
-        //{
-        //    Hours = 9;
-        //    int result = (int)h_angle / 30;
-        //    Hours -= result;
-        //}
-        //else if(h_angle >270 && h_angle <= 360)
-        //{
-        //    Hours = 6;
-        //    int result = (int)h_angle / 30;
-        //    Hours -= (3 - result);
-        //}
+
         float h_angle = Hour.transform.eulerAngles.z;
-        int h_inverse = (int)((360-h_angle) / 30);
+
+
+        int h_inverse = (int)((360 - h_angle) / 30);
         Hours = h_inverse + 3;
         Hours = Hours > 12 ? Hours - 12 : Hours;
 
-        //Vector2 Minute_vec = new Vector2(Minute.transform.position.x, Minute.transform.position.y);
+
         float m_angle = Minute.transform.eulerAngles.z;
         int m_inverse = (int)((360 - m_angle) / 6);
         Minutes = m_inverse + 15;
         Minutes = Minutes > 59 ? Minutes - 60 : Minutes;
-        //if (m_angle <= 90)
-        //{
-        //    Minutes = 15;
-        //    int result = (int)m_angle / 6;
-        //    Minutes -= result;
-        //}
-        //else if (m_angle > 90 && m_angle <= 180)
-        //{
-        //    Minutes = 60;
-        //    int result = (int)m_angle / 6;
-        //    Minutes -= (15 - result);
-        //}
-        //else if (m_angle > 180 && m_angle <= 270)
-        //{
-        //    Minutes = 45;
-        //    int result = (int)m_angle / 6;
-        //    Minutes -= result;
-        //}
-        //else if (m_angle > 270 && m_angle <= 360)
-        //{
-        //    Minutes = 30;
-        //    int result = (int)m_angle / 6;
-        //    Minutes -= (15 - result);
-        //}
 
 
 
@@ -141,11 +101,11 @@ public class ClockPuzzle : MonoBehaviour
             theta += 270;
         }
         return theta;
-    } 
+    }
 
     float GetAngle(Vector2 origin, Vector2 point)
     {
-        return GetAngle(point.x - origin.x,point.y - origin.y);
+        return GetAngle(point.x - origin.x, point.y - origin.y);
     }
 
     public float GetAngle(Vector2 point)
@@ -153,10 +113,40 @@ public class ClockPuzzle : MonoBehaviour
         return GetAngle(ClockDial.position, point);
     }
 
+
     public bool CanTouch()
     {
         if (FindObjectOfType<TouchHandler>().CanTouch(gameObject) && !Completed) return true;
         else return false;
     }
 
+    protected override bool completedCondition()
+    {
+        return Completed;
+    }
+
+    protected override void completedOpen()
+    {
+        //open DrawerInside
+
+
+    }
+
+
+
+    protected override void closeZoomable()
+    {
+        transform.localScale = DefaultScale;
+
+    }
+
+    protected override bool openPuzzleCheck()
+    {
+        return Hour.isPlaced && Minute.isPlaced;
+    }
+
+    //public void HandPlaced()
+    //{
+    //    if (Hour.isPlaced && Minute.isPlaced) ZoomCollider.enabled = true;
+    //}
 }

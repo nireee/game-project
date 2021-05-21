@@ -6,6 +6,8 @@ public class ClockHand : DragableObject
 {
     public ClockPuzzle CP;
     private Item itemScript;
+
+    public bool isPlaced = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +28,13 @@ public class ClockHand : DragableObject
             if (itemScript.AnimationState == Item.AnimationStates.docked) itemScript.AnimationState = Item.AnimationStates.undocking;
             Dragable = true;
             displacement = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            itemScript.IncrementSortingOrder();
         }
+        else
+        {
+            Dragable = false;
+        }
+        
     }
 
     private void OnMouseDrag()
@@ -52,6 +60,9 @@ public class ClockHand : DragableObject
         if (itemScript.AnimationState == Item.AnimationStates.undocked && CP.CheckHandDropRadius(Camera.main.ScreenToWorldPoint(Input.mousePosition), transform))
         {
             itemScript.SetItemState(Item.ItemStates.placed);
+            transform.parent = CP.transform;
+            isPlaced = true;
+            FindObjectOfType<Inventory>().PlaceItem(itemScript);
         }
     }
 }
