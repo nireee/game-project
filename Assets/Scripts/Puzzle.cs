@@ -8,6 +8,11 @@ public class Puzzle : Zoomable
     public bool Finished;
     public Key key;
 
+    private void Start()
+    {
+        ParentStart();
+        key.gameObject.SetActive(false);
+    }
 
     void Update(){
         if (!Finished)

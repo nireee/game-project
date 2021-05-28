@@ -9,6 +9,8 @@ public class SceneLoading : MonoBehaviour
     private float loadingStart;
     public TouchHandler TouchH;
     private bool InventoryLoaded = false;
+
+    public bool DestoryInventory = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,10 +27,20 @@ public class SceneLoading : MonoBehaviour
             Screen.gameObject.SetActive(false);
             FindObjectOfType<TouchHandler>().ClearCanTouchObjects();
         }
-        else if (!InventoryLoaded && FindObjectOfType<Inventory>())
+        //else if (!InventoryLoaded && FindObjectOfType<Inventory>())
+        //{
+        //    if (!FindObjectOfType<Basement>()) FindObjectOfType<Inventory>().LoadInventory();
+        //    else Destroy(FindObjectOfType<Inventory>());
+        //    InventoryLoaded = true;
+        //}
+        else if(!InventoryLoaded && Inventory.StaticInventory)
         {
-            if (!FindObjectOfType<Basement>()) FindObjectOfType<Inventory>().LoadInventory();
-            else Destroy(FindObjectOfType<Inventory>());
+            if (!DestoryInventory) Inventory.StaticInventory.LoadInventory();
+            else
+            {
+                Destroy(Inventory.StaticInventory.gameObject);
+                Inventory.StaticInventory = null;
+            }
             InventoryLoaded = true;
         }
     }
