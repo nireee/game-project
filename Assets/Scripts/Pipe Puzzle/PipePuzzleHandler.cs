@@ -11,6 +11,7 @@ public class PipePuzzleHandler : MonoBehaviour
 
     void Start()
     {
+        pp.gameObject.SetActive(false);
         cancel.gameObject.SetActive(false);
     }
 

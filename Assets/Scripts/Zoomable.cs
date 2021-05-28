@@ -18,7 +18,15 @@ public class Zoomable : MonoBehaviour
     public float ExpansionRate = 1;
 
     [SerializeField] protected BoxCollider2D ZoomCollider;
+    private void Start()
+    {
+        ParentStart();
+    }
 
+    private void Update()
+    {
+        ParentUpdate();
+    }
     // Start is called before the first frame update
     protected void ParentStart()
     {

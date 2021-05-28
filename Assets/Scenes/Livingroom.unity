@@ -338,7 +338,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.2983356
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -779,7 +779,7 @@ GameObject:
   - component: {fileID: 1434975262}
   - component: {fileID: 1434975261}
   m_Layer: 0
-  m_Name: "a\u0302\x80\x94Pngtreea\u0302\x80\x94retro tv_578460_0"
+  m_Name: TV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -823,7 +823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ea29365ae54444309817e6c737b15fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Active: 1
+  Active: 0
   LoadSceneName: puzzle 1
 --- !u!212 &1434975263
 SpriteRenderer:

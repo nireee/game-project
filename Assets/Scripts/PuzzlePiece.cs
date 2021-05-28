@@ -37,7 +37,7 @@ public class PuzzlePiece : DragableObject
     }
     public void OnMouseDown(){
         if (!FindObjectOfType<TouchHandler>().CanTouch(gameObject)) return;
-        if (itemScript.GetItemStates() != Item.ItemStates.hidden && itemScript.GetItemStates() != Item.ItemStates.placed)
+        if (itemScript && itemScript.GetItemStates() != Item.ItemStates.hidden && itemScript.GetItemStates() != Item.ItemStates.placed)
         {
             if (itemScript.AnimationState == Item.AnimationStates.docked) itemScript.AnimationState = Item.AnimationStates.undocking;
             Dragable = true;
@@ -84,16 +84,17 @@ public class PuzzlePiece : DragableObject
             if(!Dragable) return;
             foreach (Neighbor neighbor in Neighbors)
             {
-            if (neighbor.Piece && checkPiecePossition(neighbor)){
-                if(neighbor.Piece.Dragable){
-                    neighbor.Piece.transform.position = (Vector2)transform.position + neighbor.Offset;
-                    ParentChildSwapping(transform.GetComponent<PuzzlePiece>(), neighbor.Piece);
+                if (neighbor.Piece && checkPiecePossition(neighbor)){
+                    if(neighbor.Piece.Dragable){
+                        neighbor.Piece.transform.position = (Vector2)transform.position + neighbor.Offset;
+                        ParentChildSwapping(transform.GetComponent<PuzzlePiece>(), neighbor.Piece);
                 }else{
-                    itemScript.SetItemState(Item.ItemStates.placed);
-                    FindObjectOfType<Inventory>().PlaceItem(itemScript);
-                    Dragable = false;
-                    transform.position = (Vector2)neighbor.Piece.transform.position - neighbor.Offset;
-                    ParentChildSwapping(neighbor.Piece, transform.GetComponent<PuzzlePiece>());
+                        if (neighbor.Piece.GetComponent<Puzzle>() && !neighbor.Piece.GetComponent<Puzzle>().Expanded) return;
+                        itemScript.SetItemState(Item.ItemStates.placed);
+                        FindObjectOfType<Inventory>().PlaceItem(itemScript);
+                        Dragable = false;
+                        transform.position = (Vector2)neighbor.Piece.transform.position - neighbor.Offset;
+                        ParentChildSwapping(neighbor.Piece, transform.GetComponent<PuzzlePiece>());
                 }
             }
             }
