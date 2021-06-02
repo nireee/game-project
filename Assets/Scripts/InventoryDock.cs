@@ -69,7 +69,7 @@ public class InventoryDock : MonoBehaviour
         Dock.SetActive(true);
         for (int i = 0; i < inventory.InventoryItems.Count; i += 1)
         {
-            if (inventory.InventoryItems[i] && inventory.InventoryItems[i].GetComponent<Item>().GetItemStates() != Item.ItemStates.hidden)
+            if (inventory.InventoryItems[i] && inventory.InventoryItems[i].GetComponent<Item>().GetItemStates() != Item.ItemStates.hidden && inventory.InventoryItems[i].GetComponent<Item>().GetItemStates() != Item.ItemStates.placed)
             {
                 inventory.InventoryItems[i].gameObject.SetActive(true);
             }

@@ -921,6 +921,7 @@ MonoBehaviour:
   Screen: {fileID: 1623922731}
   LoadTime: 1
   TouchH: {fileID: 324315201}
+  DestoryInventory: 0
 --- !u!4 &1399121253
 Transform:
   m_ObjectHideFlags: 0
@@ -1372,6 +1373,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480524763269006609, guid: 31493a400989f42dcae763e2e9317ad2,
+        type: 3}
+      propertyPath: num1
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480524763269006609, guid: 31493a400989f42dcae763e2e9317ad2,
+        type: 3}
+      propertyPath: num2
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480524763269006609, guid: 31493a400989f42dcae763e2e9317ad2,
+        type: 3}
+      propertyPath: num3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6480524763269006609, guid: 31493a400989f42dcae763e2e9317ad2,
         type: 3}
