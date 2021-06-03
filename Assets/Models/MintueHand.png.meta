@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ac6653d0c79b14ab59a33847b65944ce
+guid: 32ce6630632e145ef934f501984d55ff
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3332814375804137559
-    second: minute hand_0
+      213: 2876135398651400790
+    second: MintueHand_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -150,22 +150,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: minute hand_0
+      name: MintueHand_0
       rect:
         serializedVersion: 2
-        x: 266
-        y: 269
-        width: 224
-        height: 499
+        x: 713
+        y: 222
+        width: 684
+        height: 1261
       alignment: 9
-      pivot: {x: 0.917707, y: 0.9615575}
+      pivot: {x: 0.8595829, y: 0.10990539}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9af01e3bbf67fb1d0800000000000000
-      internalID: -3332814375804137559
+      spriteID: 6521b8a18e51ae720800000000000000
+      internalID: 2876135398651400790
       vertices: []
       indices: 
       edges: []
