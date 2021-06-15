@@ -21,9 +21,11 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
-
+    bool side = false;
     public void SettingButton()
     {
-
+        if (side) AudioHandler.playFX(jump);
+        else AudioHandler.playFX(scrape);
+        side != side;
     }
 }

@@ -55,6 +55,8 @@ public class Item : MonoBehaviour
         //handle spriterenderer not being on the parent object
         sprite = GetComponent<SpriteRenderer>();
         if (!sprite) sprite = AlternateSprite;
+
+        OrderInLayer = Mathf.Max(sprite.sortingOrder, OrderInLayer);
     }
 
     private void Update()
@@ -175,6 +177,7 @@ public class Item : MonoBehaviour
     private SpriteRenderer sprite;
     public void IncrementSortingOrder()
     {
+
         if (sprite.sortingOrder <= OrderInLayer) OrderInLayer += 2;
         else OrderInLayer = sprite.sortingOrder + 2;
         transform.position = new Vector3(transform.position.x, transform.position.y, foundZDepth);

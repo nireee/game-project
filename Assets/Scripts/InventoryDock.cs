@@ -25,6 +25,8 @@ public class InventoryDock : MonoBehaviour
         
     }
 
+
+
     private void OnMouseDown(){
         if (!FindObjectOfType<TouchHandler>().CanTouch(gameObject)) return;
         if (isOpen){

@@ -44,5 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Screen: {fileID: 0}
-  LoadTime: 1
+  LoadTime: 0
   TouchH: {fileID: 0}
+  DestoryInventory: 0
