@@ -6,6 +6,11 @@ public class Basement : MonoBehaviour
 {
     public float time = 2;
     private float start;
+    private Diary diary;
+    public DialogWindow DialogWindow;
+    private bool endingDisplayed = false;
+
+    [TextArea] public string Ending1Text, Ending2Text, Ending3Text, Ending4Text;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +22,22 @@ public class Basement : MonoBehaviour
     void Update()
     {
         if (Time.fixedTime > time + start) UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        if (!diary) diary = Diary.StaticDiary;
+        else if(!endingDisplayed)
+        {
+            HandleEndings();
+            Destroy(Diary.StaticDiary.gameObject);
+            endingDisplayed = true;
+        }
     }
 
+    private void HandleEndings()
+    {
+        int notesFound = Diary.GetNoteFoundCount();
+        if (notesFound == 1) DialogWindow.DisplayDialog(Ending1Text);
+        else if (notesFound == 2) DialogWindow.DisplayDialog(Ending2Text);
+        else if (notesFound == 3) DialogWindow.DisplayDialog(Ending3Text);
+        else DialogWindow.DisplayDialog(Ending4Text);
+    }
 
 }
