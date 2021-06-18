@@ -24,8 +24,8 @@ public class MainMenu : MonoBehaviour
     bool side = false;
     public void SettingButton()
     {
-        if (side) AudioHandler.playFX(jump);
-        else AudioHandler.playFX(scrape);
-        side != side;
+        if (side) AudioHandler.playFX("jump");
+        else AudioHandler.playFX("scrape");
+        side =!side;
     }
 }

@@ -39,11 +39,14 @@ public class Diary : MonoBehaviour
         StaticDiary.DisplayNote(note);
     }
 
-    private void DisplayNote(Note note)
+    public void DisplayNote(Note note)
     {
         //find text window to display
         FindObjectOfType<DialogWindow>().DisplayDialog(note.MyNote);
     }
+
+
+    
 
 
 }
