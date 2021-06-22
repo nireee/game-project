@@ -7,11 +7,13 @@ public class Puzzle : Zoomable
     public PuzzlePiece[] Pieces;
     public bool Finished;
     public Key key;
+    public Note note;
 
     private void Start()
     {
         ParentStart();
         key.gameObject.SetActive(false);
+        note.gameObject.SetActive(false);
     }
 
     void Update(){
@@ -22,6 +24,7 @@ public class Puzzle : Zoomable
             {
                 key.gameObject.SetActive(true);
                 key.gameObject.GetComponent<Item>().IncrementSortingOrder();
+                note.gameObject.SetActive(true);
             }
             
         }

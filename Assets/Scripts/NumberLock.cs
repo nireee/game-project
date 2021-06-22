@@ -19,6 +19,7 @@ public class NumberLock : Zoomable
     void Start()
     {
         ParentStart();
+        if (transform.parent) transform.parent = null;
         DrawerInside.SetActive(false);
 
     }

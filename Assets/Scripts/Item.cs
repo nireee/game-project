@@ -34,6 +34,7 @@ public class Item : MonoBehaviour
     public float DockScale = 0.5f;
     public float DockingRate = 1;
     public float UndockingRate = 1;
+    public float UndockScale = 1;
 
     public float MaximizedPause = 999;
     private float maximizedPauseStart;
@@ -105,7 +106,7 @@ public class Item : MonoBehaviour
                 
                 break;
             case AnimationStates.undocking:
-                TargetScale = 1;
+                TargetScale = UndockScale;
                 if (scaleItem(UndockingRate))
                 {
                     AnimationState += 1;
