@@ -43,7 +43,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 11
+  serializedVersion: 12
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_LightingSettings: {fileID: 2120900989}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -118,6 +118,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
@@ -156,6 +158,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -179,7 +182,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: cd92498a93ac7459582be2acb89ee6ae, type: 3}
   m_Color: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 1}
   m_FlipX: 0
@@ -199,7 +202,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 108221262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.15, y: 2.3400002, z: -1.71}
+  m_LocalPosition: {x: 0.15, y: 1.95, z: -1.71}
   m_LocalScale: {x: 1.0246984, y: 1.1000973, z: 1.36}
   m_Children:
   - {fileID: 1692500403}
@@ -310,17 +313,17 @@ PrefabInstance:
     - target: {fileID: 5812244499899607772, guid: 3fba38bd74f694f72a659b6da9e2020f,
         type: 3}
       propertyPath: Neighbors.Array.data[0].Offset.x
-      value: 0.01
+      value: -0.028017242
       objectReference: {fileID: 0}
     - target: {fileID: 5812244499899607772, guid: 3fba38bd74f694f72a659b6da9e2020f,
         type: 3}
       propertyPath: Neighbors.Array.data[0].Offset.y
-      value: -0.313
+      value: 0.94189817
       objectReference: {fileID: 0}
     - target: {fileID: 5812244499899607773, guid: 3fba38bd74f694f72a659b6da9e2020f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5812244499899607773, guid: 3fba38bd74f694f72a659b6da9e2020f,
         type: 3}
@@ -330,7 +333,7 @@ PrefabInstance:
     - target: {fileID: 5812244499899607773, guid: 3fba38bd74f694f72a659b6da9e2020f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.9380004
+      value: -2.67
       objectReference: {fileID: 0}
     - target: {fileID: 5812244499899607773, guid: 3fba38bd74f694f72a659b6da9e2020f,
         type: 3}
@@ -404,17 +407,17 @@ PrefabInstance:
     - target: {fileID: 209758229901904806, guid: c1aa8b799a9cd4a3d8e5731a732ceeae,
         type: 3}
       propertyPath: Neighbors.Array.data[0].Offset.x
-      value: 0.319
+      value: -0.89375
       objectReference: {fileID: 0}
     - target: {fileID: 209758229901904806, guid: c1aa8b799a9cd4a3d8e5731a732ceeae,
         type: 3}
       propertyPath: Neighbors.Array.data[0].Offset.y
-      value: -0.001
+      value: 0.003009259
       objectReference: {fileID: 0}
     - target: {fileID: 209758229901904807, guid: c1aa8b799a9cd4a3d8e5731a732ceeae,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 209758229901904807, guid: c1aa8b799a9cd4a3d8e5731a732ceeae,
         type: 3}
@@ -599,6 +602,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -692,6 +696,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -751,7 +756,7 @@ PrefabInstance:
     - target: {fileID: 129569465145247642, guid: a7fef24e1a68c46aaa2f2fffa3d75ae8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 129569465145247642, guid: a7fef24e1a68c46aaa2f2fffa3d75ae8,
         type: 3}
@@ -816,12 +821,12 @@ PrefabInstance:
     - target: {fileID: 129569465145247645, guid: a7fef24e1a68c46aaa2f2fffa3d75ae8,
         type: 3}
       propertyPath: Neighbors.Array.data[0].Offset.x
-      value: -0.316
+      value: 0.8853448
       objectReference: {fileID: 0}
     - target: {fileID: 129569465145247645, guid: a7fef24e1a68c46aaa2f2fffa3d75ae8,
         type: 3}
       propertyPath: Neighbors.Array.data[0].Offset.y
-      value: -0.309
+      value: 0.9298611
       objectReference: {fileID: 0}
     - target: {fileID: 129569465145247646, guid: a7fef24e1a68c46aaa2f2fffa3d75ae8,
         type: 3}
@@ -863,12 +868,12 @@ PrefabInstance:
     - target: {fileID: 7919678074190095568, guid: bccc5ba456c204edcbe8e8678997a655,
         type: 3}
       propertyPath: Neighbors.Array.data[0].Offset.x
-      value: 0.321
+      value: -0.89935344
       objectReference: {fileID: 0}
     - target: {fileID: 7919678074190095568, guid: bccc5ba456c204edcbe8e8678997a655,
         type: 3}
       propertyPath: Neighbors.Array.data[0].Offset.y
-      value: -0.312
+      value: 0.9388889
       objectReference: {fileID: 0}
     - target: {fileID: 7919678074190095570, guid: bccc5ba456c204edcbe8e8678997a655,
         type: 3}
@@ -952,7 +957,7 @@ PrefabInstance:
     - target: {fileID: 3951260931186669325, guid: 085d8b1e68a9743e186f0feb5b4ddc9d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3951260931186669325, guid: 085d8b1e68a9743e186f0feb5b4ddc9d,
         type: 3}
@@ -962,7 +967,7 @@ PrefabInstance:
     - target: {fileID: 3951260931186669325, guid: 085d8b1e68a9743e186f0feb5b4ddc9d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.75
+      value: -2.51
       objectReference: {fileID: 0}
     - target: {fileID: 3951260931186669325, guid: 085d8b1e68a9743e186f0feb5b4ddc9d,
         type: 3}
@@ -1017,12 +1022,12 @@ PrefabInstance:
     - target: {fileID: 3951260931186669330, guid: 085d8b1e68a9743e186f0feb5b4ddc9d,
         type: 3}
       propertyPath: Neighbors.Array.data[0].Offset.x
-      value: -0.313
+      value: 0.87693965
       objectReference: {fileID: 0}
     - target: {fileID: 3951260931186669330, guid: 085d8b1e68a9743e186f0feb5b4ddc9d,
         type: 3}
       propertyPath: Neighbors.Array.data[0].Offset.y
-      value: 0.318
+      value: -0.95694447
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 085d8b1e68a9743e186f0feb5b4ddc9d, type: 3}
@@ -1058,6 +1063,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1939,6 +1945,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2021,7 +2028,7 @@ PrefabInstance:
     - target: {fileID: 3795510068448943083, guid: 66cf5abe18ddf491ea9d199d3209d20e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3795510068448943083, guid: 66cf5abe18ddf491ea9d199d3209d20e,
         type: 3}
@@ -2107,7 +2114,7 @@ PrefabInstance:
     - target: {fileID: 989248700530522008, guid: f9e6e00e1614b443e82d049216dcd2fa,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 989248700530522008, guid: f9e6e00e1614b443e82d049216dcd2fa,
         type: 3}
@@ -2167,12 +2174,12 @@ PrefabInstance:
     - target: {fileID: 989248700530522009, guid: f9e6e00e1614b443e82d049216dcd2fa,
         type: 3}
       propertyPath: Neighbors.Array.data[0].Offset.x
-      value: -0.312
+      value: 0.87413794
       objectReference: {fileID: 0}
     - target: {fileID: 989248700530522009, guid: f9e6e00e1614b443e82d049216dcd2fa,
         type: 3}
       propertyPath: Neighbors.Array.data[0].Offset.y
-      value: 0.009
+      value: -0.027083334
       objectReference: {fileID: 0}
     - target: {fileID: 989248700530522011, guid: f9e6e00e1614b443e82d049216dcd2fa,
         type: 3}
@@ -2206,7 +2213,7 @@ PrefabInstance:
     - target: {fileID: 4961065149316130554, guid: ed06106c2730549dfb6b62a786bdccce,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4961065149316130554, guid: ed06106c2730549dfb6b62a786bdccce,
         type: 3}
@@ -2483,6 +2490,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2596,6 +2604,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2619,7 +2628,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 3665eafd3aa974167b9e326b8ecafb6d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2835,7 +2844,7 @@ PrefabInstance:
     - target: {fileID: 7752361418409525912, guid: fd3fc2d317ce74b3fbc63568bf7ad47c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7752361418409525912, guid: fd3fc2d317ce74b3fbc63568bf7ad47c,
         type: 3}
@@ -2895,12 +2904,12 @@ PrefabInstance:
     - target: {fileID: 7752361418409525913, guid: fd3fc2d317ce74b3fbc63568bf7ad47c,
         type: 3}
       propertyPath: Neighbors.Array.data[0].Offset.x
-      value: 0.328
+      value: -0.9189655
       objectReference: {fileID: 0}
     - target: {fileID: 7752361418409525913, guid: fd3fc2d317ce74b3fbc63568bf7ad47c,
         type: 3}
       propertyPath: Neighbors.Array.data[0].Offset.y
-      value: 0.318
+      value: -0.95694447
       objectReference: {fileID: 0}
     - target: {fileID: 7752361418409525915, guid: fd3fc2d317ce74b3fbc63568bf7ad47c,
         type: 3}
@@ -2944,6 +2953,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83309e234bcde4fafaefb1abe7f9dea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!850595691 &2120900989
+LightingSettings:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Settings.lighting
+  serializedVersion: 2
+  m_GIWorkflowMode: 1
+  m_EnableBakedLightmaps: 0
+  m_EnableRealtimeLightmaps: 0
+  m_RealtimeEnvironmentLighting: 1
+  m_BounceScale: 1
+  m_AlbedoBoost: 1
+  m_IndirectOutputScale: 1
+  m_UsingShadowmask: 1
+  m_BakeBackend: 1
+  m_LightmapMaxSize: 1024
+  m_BakeResolution: 40
+  m_Padding: 2
+  m_TextureCompression: 1
+  m_AO: 0
+  m_AOMaxDistance: 1
+  m_CompAOExponent: 1
+  m_CompAOExponentDirect: 0
+  m_ExtractAO: 0
+  m_MixedBakeMode: 2
+  m_LightmapsBakeMode: 1
+  m_FilterMode: 1
+  m_LightmapParameters: {fileID: 0}
+  m_ExportTrainingData: 0
+  m_TrainingDataDestination: TrainingData
+  m_RealtimeResolution: 2
+  m_ForceWhiteAlbedo: 0
+  m_ForceUpdates: 0
+  m_FinalGather: 0
+  m_FinalGatherRayCount: 256
+  m_FinalGatherFiltering: 1
+  m_PVRCulling: 1
+  m_PVRSampling: 1
+  m_PVRDirectSampleCount: 32
+  m_PVRSampleCount: 512
+  m_PVREnvironmentSampleCount: 256
+  m_PVREnvironmentReferencePointCount: 2048
+  m_LightProbeSampleCountMultiplier: 4
+  m_PVRBounces: 2
+  m_PVRRussianRouletteStartBounce: 2
+  m_PVREnvironmentMIS: 1
+  m_PVRFilteringMode: 1
+  m_PVRDenoiserTypeDirect: 1
+  m_PVRDenoiserTypeIndirect: 1
+  m_PVRDenoiserTypeAO: 1
+  m_PVRFilterTypeDirect: 0
+  m_PVRFilterTypeIndirect: 0
+  m_PVRFilterTypeAO: 0
+  m_PVRFilteringGaussRadiusDirect: 1
+  m_PVRFilteringGaussRadiusIndirect: 5
+  m_PVRFilteringGaussRadiusAO: 2
+  m_PVRFilteringAtrousPositionSigmaDirect: 0.5
+  m_PVRFilteringAtrousPositionSigmaIndirect: 2
+  m_PVRFilteringAtrousPositionSigmaAO: 1
 --- !u!1001 &2134831914
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2959,17 +3029,17 @@ PrefabInstance:
     - target: {fileID: 4063034490441641537, guid: 9d393afb3221d40fa852dff30f16c438,
         type: 3}
       propertyPath: Neighbors.Array.data[0].Offset.x
-      value: 0.01
+      value: -0.028017242
       objectReference: {fileID: 0}
     - target: {fileID: 4063034490441641537, guid: 9d393afb3221d40fa852dff30f16c438,
         type: 3}
       propertyPath: Neighbors.Array.data[0].Offset.y
-      value: 0.316
+      value: -0.95092595
       objectReference: {fileID: 0}
     - target: {fileID: 4063034490441641538, guid: 9d393afb3221d40fa852dff30f16c438,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4063034490441641538, guid: 9d393afb3221d40fa852dff30f16c438,
         type: 3}

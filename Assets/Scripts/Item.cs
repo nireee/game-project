@@ -49,7 +49,7 @@ public class Item : MonoBehaviour
     private bool preloaded = false;
     public SpriteRenderer AlternateSprite;
 
-    private void Start()
+    private void Awake()
     {
         if(!preloaded) DefaultScale = transform.lossyScale;
 
@@ -157,19 +157,23 @@ public class Item : MonoBehaviour
 
     private void OnMouseDown()
         {
-        
+
         if (!FindObjectOfType<TouchHandler>().CanTouch(gameObject)) return;
         if(AnimationState == AnimationStates.maximizing ||  AnimationState == AnimationStates.maximized || AnimationState == AnimationStates.docking)
         {
+            //play docking FX
+            AudioHandler.playFX("jump");
             DockItem();
         }
         if (AnimationState == AnimationStates.hidden && ItemState == ItemStates.hidden)
         {
+            //play discover FX
             itemFound();
         }
 
         if(ItemState != ItemStates.placed && AnimationState > AnimationStates.poppingOut)
         {
+            //play normal FX
             IncrementSortingOrder();
         }
         
