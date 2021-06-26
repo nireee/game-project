@@ -27,9 +27,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4961065149316130553}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.13, y: 3.03, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 0.06666668, y: 0.06666668, z: 0.7352941}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -3743149049346420655, guid: a22704db76c6a492faa96fab75e169e2,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -218,7 +218,7 @@ MonoBehaviour:
   PieceId: 0
   Neighbors:
   - Piece: {fileID: 0}
-    Offset: {x: 0, y: 0}
+    Offset: {x: 0.162, y: 2.342}
   SnapThreshold: 0.1
 --- !u!114 &4961065149316130438
 MonoBehaviour:
@@ -232,15 +232,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfa4a61ab7ab14a67ba88d998603bc45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemPrefab: {fileID: 0}
+  ItemPrefab: {fileID: 4961065149316130553}
   ItemID: 5
   ItemState: 0
   AnimationState: 0
   PopOutTranslation: {x: 2, y: 0}
-  PopOutTranslationSpeed: 0.5
+  PopOutTranslationSpeed: 1
   MaximiziedScale: 2
   MaximizingRate: 1
   DockScale: 0.5
   DockingRate: 1
   UndockingRate: 1
+  UndockScale: 2
   MaximizedPause: 1
+  DefaultScale: {x: 0, y: 0}
+  AlternateSprite: {fileID: 0}

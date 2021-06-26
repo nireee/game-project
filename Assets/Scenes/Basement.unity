@@ -219,12 +219,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f81258b5df5e14ac2af00cd7d1468a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 6
+  time: 300
   dialogWindow: {fileID: 5178750959687593009}
-  Ending1Text: Ending 1
-  Ending2Text: Ending 2
-  Ending3Text: Ending 3
-  Ending4Text: Ending 4
+  Ending1Text: You opened the door, but you didn't see anything, only the boundless
+    darkness.
+  Ending2Text: "You opened the door, and found yourself back to the bedroom. You
+    tried to find any hints that can help you leave the room but found nothing. You
+    found a note in the crack of the door that wrote: \u201CI AM FREE\u201D. You
+    were so confused, realized that you seem to be trapped here, forever."
+  Ending3Text: 'You opened the door and went outside. You looked around, but you
+    didn''t find anyone around. You were a little bit disappointed, thinking that
+    maybe your friend has left after waiting for too long. So you also decided to
+    leave this place as soon as possible. Before leaving, you looked back at this
+    disturbing villa, and shivered.
+
+'
+  Ending4Text: "You opened the door and woke up in a ward. You try to remember \u201Cyour
+    friend\u201D. Wait... Does such a friend really exist? You felt a splitting headache,
+    and the memory in your mind was blurred. it seems that...you are always alone...\n"
+  Ending5Text: "You opened the door and saw someone standing in the dark.\n\"Hey
+    Lottie\", the guy said, \"I have been waiting for you for a long time.\"\n\"Who
+    are you?\" You are a little confused.\n\"I am your best friend, who has been
+    with you throughout your life.\" That guy walked out of the darkness. You saw
+    a familiar face, that was yourself.\n\"I am another you.\" She said, \"I was
+    born to protect you, but now it looks like you can get out of the past that trapped
+    you, so I am leaving.\"\n\"Wait!\" You stop her, \"Don't go!\"\n\"But you don't
+    need me anymore,\" she said.\n\"We are friends, right?\"\n\"Sure.\"\n\"Are you
+    making friends in order to protect me?\"\n\"No, I was born to protect you. I
+    made friends with you just because I want to do so.\"\n\"Then why are you leaving?\"\nThen
+    you woke up in a ward.\n\"Hey.\" you talked to yourself.\n\"Don\u2019t worry,
+    I\u2019m here.\"\n"
 --- !u!4 &696670770
 Transform:
   m_ObjectHideFlags: 0

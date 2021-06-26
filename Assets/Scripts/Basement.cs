@@ -10,7 +10,7 @@ public class Basement : MonoBehaviour
     public DialogWindow dialogWindow;
     private bool endingDisplayed = false;
 
-    [TextArea] public string Ending1Text, Ending2Text, Ending3Text, Ending4Text;
+    [TextArea] public string Ending1Text, Ending2Text, Ending3Text, Ending4Text, Ending5Text;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +37,8 @@ public class Basement : MonoBehaviour
         if (notesFound == 1) dialogWindow.DisplayDialog(Ending1Text);
         else if (notesFound == 2) dialogWindow.DisplayDialog(Ending2Text);
         else if (notesFound == 3) dialogWindow.DisplayDialog(Ending3Text);
-        else dialogWindow.DisplayDialog(Ending4Text);
+        else if (notesFound == 4) dialogWindow.DisplayDialog(Ending4Text);
+        else dialogWindow.DisplayDialog(Ending5Text);
 
     }
 

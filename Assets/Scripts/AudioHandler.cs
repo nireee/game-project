@@ -61,11 +61,13 @@ public class AudioHandler : MonoBehaviour
     {
         MasterVolume = volume;
         masterVolume = MasterVolume;
+        if(backgroundTrack != null) Background.volume = backgroundTrack.volume * masterVolume;
     }
 
     private void StartBackground(string clipname)
     {
         AudioLibrary track = getTrack(clipname);
+        backgroundTrack = track;
         Background.clip = track.Track;
         Background.Play();
         Background.loop = LoopBackground;

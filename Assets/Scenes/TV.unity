@@ -601,6 +601,11 @@ PrefabInstance:
       propertyPath: TouchH
       value: 
       objectReference: {fileID: 978496422}
+    - target: {fileID: 3437493895051336197, guid: 77cb44b831b8e4dcdabaa9569bfec47a,
+        type: 3}
+      propertyPath: LoadTime
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77cb44b831b8e4dcdabaa9569bfec47a, type: 3}
 --- !u!114 &978496422 stripped
@@ -975,6 +980,7 @@ GameObject:
   - component: {fileID: 1616284301}
   - component: {fileID: 1616284300}
   - component: {fileID: 1616284299}
+  - component: {fileID: 1616284302}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1017,7 +1023,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.31
+  orthographic size: 4.29
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1047,6 +1053,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1616284302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616284298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cb4d241d0e4f4c669e36796730f0671, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iPadCS: 5.31
+  iPhoneXCS: 3.72
+  iPhoneCS: 4.29
 --- !u!1 &2099585468
 GameObject:
   m_ObjectHideFlags: 0
