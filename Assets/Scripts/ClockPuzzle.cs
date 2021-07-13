@@ -8,6 +8,7 @@ public class ClockPuzzle : Zoomable
     public ClockHand Minute, Hour;
     public Portal TV;
     public GameObject TV_on;
+    public GameObject notes;
 
     float x = -1;
     float y = 2;
@@ -27,6 +28,8 @@ public class ClockPuzzle : Zoomable
     {
         ParentStart();
         TV_on.gameObject.SetActive(false);
+        notes.gameObject.SetActive(false);
+
         //ZoomCollider.enabled = false;
 
     }
@@ -42,6 +45,8 @@ public class ClockPuzzle : Zoomable
             TV.Active = true;
             TV.GetComponent<SpriteRenderer>().enabled = false;
             TV_on.gameObject.SetActive(true);
+            notes.gameObject.SetActive(true);
+
         }
     }
     public bool CheckHandDropRadius(Vector2 point, Transform hand)

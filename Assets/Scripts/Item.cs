@@ -49,7 +49,7 @@ public class Item : MonoBehaviour
     private bool preloaded = false;
     public SpriteRenderer AlternateSprite;
 
-    private void Start()
+    private void Awake()
     {
         if(!preloaded) DefaultScale = transform.lossyScale;
 
@@ -157,7 +157,7 @@ public class Item : MonoBehaviour
 
     private void OnMouseDown()
         {
-        
+        //AudioHandler.playFX("jump");//play sound effect
         if (!FindObjectOfType<TouchHandler>().CanTouch(gameObject)) return;
         if(AnimationState == AnimationStates.maximizing ||  AnimationState == AnimationStates.maximized || AnimationState == AnimationStates.docking)
         {
