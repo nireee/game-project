@@ -17,6 +17,8 @@ public class Zoomable : MonoBehaviour
     public float ExpandedScale = 4;
     public float ExpansionRate = 1;
 
+    
+
     [SerializeField] protected BoxCollider2D ZoomCollider;
     private void Start()
     {
@@ -61,6 +63,7 @@ public class Zoomable : MonoBehaviour
     protected virtual void closeZoomable()
     {
         transform.localScale = DefaultScale;
+        CloseZoomableChild();
     }
 
     private void SpriteButton()
@@ -127,5 +130,10 @@ public class Zoomable : MonoBehaviour
     protected virtual bool openPuzzleCheck()
     {
         return true;
+    }
+
+    protected virtual void CloseZoomableChild()
+    {
+
     }
 }

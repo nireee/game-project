@@ -100,7 +100,7 @@ public class Item : MonoBehaviour
                 break;
             case AnimationStates.docking:
                 AddItemToDock();
-                AnimationState += 1;
+                
                 break;
             case AnimationStates.docked:
                 

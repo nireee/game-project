@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Basement : MonoBehaviour
 {
@@ -28,6 +29,11 @@ public class Basement : MonoBehaviour
             HandleEndings();
             Destroy(Diary.StaticDiary.gameObject);
             endingDisplayed = true;
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            SceneManager.LoadScene(0);
         }
     }
 

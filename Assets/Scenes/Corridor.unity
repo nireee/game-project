@@ -210,8 +210,8 @@ Transform:
   - {fileID: 917458847}
   - {fileID: 875165800}
   - {fileID: 927723098}
-  - {fileID: 979513496}
   - {fileID: 1602473085}
+  - {fileID: 979513496}
   - {fileID: 1692500403}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -301,6 +301,11 @@ PrefabInstance:
         type: 3}
       propertyPath: UndockingRate
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5812244499899607585, guid: 3fba38bd74f694f72a659b6da9e2020f,
+        type: 3}
+      propertyPath: MaximizedPause
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 5812244499899607772, guid: 3fba38bd74f694f72a659b6da9e2020f,
         type: 3}
@@ -405,6 +410,11 @@ PrefabInstance:
         type: 3}
       propertyPath: UndockingRate
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 209758229901904803, guid: c1aa8b799a9cd4a3d8e5731a732ceeae,
+        type: 3}
+      propertyPath: MaximizedPause
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 209758229901904804, guid: c1aa8b799a9cd4a3d8e5731a732ceeae,
         type: 3}
@@ -873,6 +883,11 @@ PrefabInstance:
       propertyPath: UndockingRate
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 129569465145247646, guid: a7fef24e1a68c46aaa2f2fffa3d75ae8,
+        type: 3}
+      propertyPath: MaximizedPause
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7fef24e1a68c46aaa2f2fffa3d75ae8, type: 3}
 --- !u!114 &457360019 stripped
@@ -923,7 +938,7 @@ PrefabInstance:
     - target: {fileID: 7919678074190095571, guid: bccc5ba456c204edcbe8e8678997a655,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7919678074190095571, guid: bccc5ba456c204edcbe8e8678997a655,
         type: 3}
@@ -994,6 +1009,11 @@ PrefabInstance:
         type: 3}
       propertyPath: UndockingRate
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7919678074190095583, guid: bccc5ba456c204edcbe8e8678997a655,
+        type: 3}
+      propertyPath: MaximizedPause
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bccc5ba456c204edcbe8e8678997a655, type: 3}
@@ -1083,6 +1103,11 @@ PrefabInstance:
         type: 3}
       propertyPath: UndockingRate
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951260931186669329, guid: 085d8b1e68a9743e186f0feb5b4ddc9d,
+        type: 3}
+      propertyPath: MaximizedPause
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 3951260931186669330, guid: 085d8b1e68a9743e186f0feb5b4ddc9d,
         type: 3}
@@ -1411,31 +1436,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4082373915286514740, guid: 49f5d861e4aba413c99da8e59aaba04d,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.04765887
-      objectReference: {fileID: 0}
-    - target: {fileID: 4082373915286514740, guid: 49f5d861e4aba413c99da8e59aaba04d,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.0661743
-      objectReference: {fileID: 0}
-    - target: {fileID: 4082373915286514740, guid: 49f5d861e4aba413c99da8e59aaba04d,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.3308715
-      objectReference: {fileID: 0}
-    - target: {fileID: 4082373915286514740, guid: 49f5d861e4aba413c99da8e59aaba04d,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -287.0315
-      objectReference: {fileID: 0}
-    - target: {fileID: 4082373915286514740, guid: 49f5d861e4aba413c99da8e59aaba04d,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -299.4029
-      objectReference: {fileID: 0}
     - target: {fileID: 4230691898167156058, guid: 49f5d861e4aba413c99da8e59aaba04d,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2090,6 +2090,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3296263737562123322, guid: 66cf5abe18ddf491ea9d199d3209d20e,
         type: 3}
+      propertyPath: ItemID
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3296263737562123322, guid: 66cf5abe18ddf491ea9d199d3209d20e,
+        type: 3}
       propertyPath: DockScale
       value: 1
       objectReference: {fileID: 0}
@@ -2111,17 +2116,17 @@ PrefabInstance:
     - target: {fileID: 3795510068448943083, guid: 66cf5abe18ddf491ea9d199d3209d20e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3795510068448943083, guid: 66cf5abe18ddf491ea9d199d3209d20e,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.18355344
+      value: 0.1835535
       objectReference: {fileID: 0}
     - target: {fileID: 3795510068448943083, guid: 66cf5abe18ddf491ea9d199d3209d20e,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.18355346
+      value: 0.18355352
       objectReference: {fileID: 0}
     - target: {fileID: 3795510068448943083, guid: 66cf5abe18ddf491ea9d199d3209d20e,
         type: 3}
@@ -2136,7 +2141,7 @@ PrefabInstance:
     - target: {fileID: 3795510068448943083, guid: 66cf5abe18ddf491ea9d199d3209d20e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.12
+      value: -0.119999975
       objectReference: {fileID: 0}
     - target: {fileID: 3795510068448943083, guid: 66cf5abe18ddf491ea9d199d3209d20e,
         type: 3}
@@ -2304,6 +2309,11 @@ PrefabInstance:
       propertyPath: UndockingRate
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 989248700530522012, guid: f9e6e00e1614b443e82d049216dcd2fa,
+        type: 3}
+      propertyPath: MaximizedPause
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9e6e00e1614b443e82d049216dcd2fa, type: 3}
 --- !u!1001 &1437796235
@@ -2317,6 +2327,11 @@ PrefabInstance:
         type: 3}
       propertyPath: UndockingRate
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961065149316130438, guid: ed06106c2730549dfb6b62a786bdccce,
+        type: 3}
+      propertyPath: MaximizedPause
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 4961065149316130553, guid: ed06106c2730549dfb6b62a786bdccce,
         type: 3}
@@ -3062,6 +3077,11 @@ PrefabInstance:
       propertyPath: UndockingRate
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7752361418409525924, guid: fd3fc2d317ce74b3fbc63568bf7ad47c,
+        type: 3}
+      propertyPath: MaximizedPause
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd3fc2d317ce74b3fbc63568bf7ad47c, type: 3}
 --- !u!114 &2027336746 stripped
@@ -3195,6 +3215,11 @@ PrefabInstance:
         type: 3}
       propertyPath: UndockingRate
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4063034490441641542, guid: 9d393afb3221d40fa852dff30f16c438,
+        type: 3}
+      propertyPath: MaximizedPause
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d393afb3221d40fa852dff30f16c438, type: 3}

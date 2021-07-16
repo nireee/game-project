@@ -24,8 +24,13 @@ public class Key : DragableObject
         if (!FindObjectOfType<TouchHandler>().CanTouch(gameObject)) return;
         if (itemScript.GetItemStates() != Item.ItemStates.hidden && itemScript.GetItemStates() != Item.ItemStates.placed)
         {
+            Dragable = true;
             displacement = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            if (itemScript.AnimationState == Item.AnimationStates.docked) itemScript.AnimationState = Item.AnimationStates.undocking;
         }
-        if (itemScript.AnimationState == Item.AnimationStates.docked) itemScript.AnimationState = Item.AnimationStates.undocking;
+        else
+        {
+            Dragable = false;
+        }
     }
 }
