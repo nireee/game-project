@@ -109,6 +109,7 @@ public class Item : MonoBehaviour
                 TargetScale = UndockScale;
                 if (scaleItem(UndockingRate))
                 {
+                    Debug.Log($"{transform.name} is undocked.");
                     AnimationState += 1;
                 }
                 break;

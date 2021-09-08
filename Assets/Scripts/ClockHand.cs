@@ -25,6 +25,7 @@ public class ClockHand : DragableObject
 
         if (itemScript.GetItemStates() != Item.ItemStates.hidden && itemScript.GetItemStates() != Item.ItemStates.placed)
         {
+            //Debug.Log($"{transform.name} is placed.");
             if (itemScript.AnimationState == Item.AnimationStates.docked) itemScript.AnimationState = Item.AnimationStates.undocking;
             Dragable = true;
             displacement = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -44,6 +45,7 @@ public class ClockHand : DragableObject
             if(itemScript.GetItemStates() == Item.ItemStates.placed)
             {
                 float angle = CP.GetAngle(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+                //Debug.Log($"{transform.name} is placed.");
                 transform.eulerAngles = new Vector3(0, 0, angle);
             }
             else
@@ -57,8 +59,9 @@ public class ClockHand : DragableObject
 
     private void OnMouseUp()
     {
-        if (itemScript.AnimationState == Item.AnimationStates.undocked && CP.CheckHandDropRadius(Camera.main.ScreenToWorldPoint(Input.mousePosition), transform))
+        if (itemScript.AnimationState == Item.AnimationStates.undocked && CP.CheckHandDropRadius(transform.position, transform)) //CP.CheckHandDropRadius(Camera.main.ScreenToWorldPoint(Input.mousePosition), transform))
         {
+            Debug.Log($"{transform.name} is placed.");
             itemScript.SetItemState(Item.ItemStates.placed);
             transform.parent = CP.transform;
             isPlaced = true;
